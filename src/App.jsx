@@ -1,0 +1,1395 @@
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import cpcHands from './assets/images/home/cpc-hands.jpg'
+import harleyStreet from './assets/images/home/harley-street.jpg'
+import london4 from './assets/images/home/london4.jpg'
+import sevenLionYard from './assets/images/home/seven-lion-yard-2.webp'
+import tpdLogo from './assets/images/affiliations/turkish-psychological-association.png'
+import bpsLogo from './assets/images/affiliations/british-psychological-society.png'
+import isstLogo from './assets/images/affiliations/isst-schema-therapy.png'
+import datemLogo from './assets/images/affiliations/datem-logo.png'
+import aptLogo from './assets/images/affiliations/association-for-play-therapy.png'
+import brandLogo from './assets/images/brand/acelya-logo.png'
+import heroYetiskin from './assets/images/pages/hero-yetiskin.jpg'
+import heroCocukErgen from './assets/images/pages/hero-cocuk-ergen.jpg'
+import heroTerapi from './assets/images/pages/hero-terapi.jpg'
+import heroOtizmDehb from './assets/images/pages/hero-otizm-dehb.jpeg'
+import heroIletisim from './assets/images/pages/hero-iletisim.jpeg'
+import acelyaPortrait from './assets/images/profile/acelya-sarioglu.jpeg'
+import sectionTherapySessionPolina from './assets/images/sections/therapy-session-polina.jpg'
+import sectionTherapyNotesCottonbro from './assets/images/sections/therapy-notes-cottonbro.jpg'
+import sectionPsychologySessionMart from './assets/images/sections/psychology-session-mart.jpg'
+import sectionChildTherapyRoomTimur from './assets/images/sections/child-therapy-room-timur.jpg'
+import sectionConsultationSilverkblackA from './assets/images/sections/consultation-silverkblack-a.jpg'
+import sectionConsultationSilverkblackB from './assets/images/sections/consultation-silverkblack-b.jpg'
+import sectionTraumaTherapyNewleaf from './assets/images/sections/trauma-therapy-newleaf.jpg'
+import sectionPsychologistOfficePeggy from './assets/images/sections/psychologist-office-peggy.jpg'
+import eventParticipation1 from './assets/images/events/event-participation-1.jpg'
+import eventParticipation2 from './assets/images/events/event-participation-2.jpg'
+import eventParticipation3 from './assets/images/events/event-participation-3.jpg'
+import platformLinkedin from './assets/images/platforms/platform-linkedin.jpg'
+import platformPsychologyToday from './assets/images/platforms/platform-psychology-today.jpeg'
+import platformItsComplicated from './assets/images/platforms/platform-its-complicated.png'
+import platformMhwClinic from './assets/images/platforms/platform-mhw-clinic.webp'
+
+const navItems = [
+  { label: 'Yetişkin', path: '/yetiskin' },
+  { label: 'Çocuk ve Ergen', path: '/cocuk-ergen' },
+  { label: 'Terapi', path: '/terapi' },
+  { label: 'Otizm ve DEHB', path: '/otizm-dehb' },
+  { label: 'İletişim', path: '/iletisim' },
+]
+
+const menuGroups = {
+  '/yetiskin': {
+    title: 'Yetişkin',
+    left: ['Yetişkin Psikoterapi', 'Kaygı ve Stres', 'Depresif Duygu Durumu', 'İlişki Zorlukları', 'Travma Sonrası Süreç'],
+    right: ['Panik Atak', 'Obsesif Kompulsif Belirtiler', 'Sosyal Anksiyete', 'Öfke Problemleri', 'Online Terapi'],
+  },
+  '/cocuk-ergen': {
+    title: 'Çocuk ve Ergen',
+    left: ['Çocuk Terapisi', 'Ergen Terapisi', 'Ebeveyn Danışmanlığı', 'Okul Uyum Süreci', 'Duygu Düzenleme'],
+    right: ['Boşanma Süreci', 'Kayıp ve Yas', 'Davranışsal Zorluklar', 'Akran İlişkileri', 'Oyun Terapisi'],
+  },
+  '/terapi': {
+    title: 'Terapi',
+    left: ['Bilişsel ve Davranışçı Terapiler', 'Şema Terapi', 'Oyun Terapisi', 'Mindfulness', 'Kısa Süreli Çözüm Odaklı Terapi'],
+    right: ['Kişiye Özel Yaklaşım', 'Kanıta Dayalı Yöntemler', 'Online Seans', 'Yüz Yüze Seans', 'Uzman Danışmanlık'],
+  },
+  '/otizm-dehb': {
+    title: 'Otizm ve DEHB',
+    left: ['Otizm Taraması', 'DEHB Taraması', 'Kapsamlı Değerlendirme', 'Altın Standart Araçlar', 'Tanı Süreci'],
+    right: ['Psiko-eğitim', 'Raporlama', 'Eğitim Ortamına Yönlendirme', 'Sosyal Uyum Desteği', 'Bakım Paketi'],
+  },
+}
+
+const stockImages = {
+  menuClinic: sectionPsychologistOfficePeggy,
+  menuFamily: sectionChildTherapyRoomTimur,
+  yetiskinSplitA: sectionTherapySessionPolina,
+  yetiskinSplitB: sectionConsultationSilverkblackA,
+  cocukSplitA: sectionChildTherapyRoomTimur,
+  cocukSplitB: sectionConsultationSilverkblackB,
+  terapiSplitA: sectionTherapyNotesCottonbro,
+  terapiSplitB: sectionPsychologySessionMart,
+  otizmSplitA: sectionTraumaTherapyNewleaf,
+  otizmSplitB: sectionPsychologistOfficePeggy,
+  homeSplitA: sectionTherapySessionPolina,
+  homeSplitB: sectionTherapyNotesCottonbro,
+  therapyShowcase: sectionPsychologySessionMart,
+}
+
+const homeCarouselImages = [cpcHands, harleyStreet, london4, sevenLionYard]
+
+const seoByPath = {
+  '/': {
+    title: 'Uzman Klinik Psikolog Açelya Sarıoğlu | Ana Sayfa',
+    description:
+      'Yetişkin, çocuk ve ergen psikoterapi ile otizm ve DEHB değerlendirme hizmetleri. London merkezli yüz yüze ve online danışmanlık.',
+    keywords:
+      'psikolog, klinik psikolog, psikoloji, danışmanlık, terapi, Açelya Sarıoğlu, yetişkin terapisi, çocuk ergen terapisi, online terapi',
+  },
+  '/yetiskin': {
+    title: 'Yetişkin Psikoterapi | Açelya Sarıoğlu',
+    description:
+      'Yetişkin psikoterapi sürecinde kaygı, panik atak, depresyon, obsesif belirtiler ve ilişki zorlukları için kişiye özel destek.',
+    keywords:
+      'yetişkin psikolog, yetişkin terapisi, kaygı terapisi, panik atak psikoloğu, depresyon terapisi, online psikolog türkiye, türk psikolog londra',
+  },
+  '/cocuk-ergen': {
+    title: 'Çocuk ve Ergen Psikoterapi | Açelya Sarıoğlu',
+    description:
+      'Çocuk ve ergenler için güvenli terapi alanı: duygusal zorluklar, okul uyumu, davranış sorunları ve ebeveyn danışmanlığı.',
+    keywords:
+      'çocuk psikoloğu, ergen psikoloğu, çocuk terapisi, ergen terapisi, ebeveyn danışmanlığı, oyun terapisi, türk psikolog uk',
+  },
+  '/terapi': {
+    title: 'Terapi ve Tedavi Yaklaşımları | Açelya Sarıoğlu',
+    description:
+      'Bilişsel Davranışçı Terapi, Şema Terapi, Oyun Terapisi ve Mindfulness odaklı, danışana özel yapılandırılmış terapi süreçleri.',
+    keywords:
+      'terapi yöntemleri, bilişsel davranışçı terapi, şema terapi, mindfulness terapi, online terapi türkiye, türkçe terapi londra',
+  },
+  '/otizm-dehb': {
+    title: 'Otizm ve DEHB Değerlendirme | Açelya Sarıoğlu',
+    description:
+      'Otizm ve DEHB için kapsamlı tarama, değerlendirme, raporlama, psiko-eğitim ve bireye özel yönlendirme hizmetleri.',
+    keywords:
+      'otizm değerlendirme, dehb değerlendirme, dikkat eksikliği, hiperaktivite bozukluğu, nörogelişimsel değerlendirme, otizm danışmanlık',
+  },
+  '/iletisim': {
+    title: 'İletişim | Açelya Sarıoğlu',
+    description:
+      'Terapi, otizm ve DEHB danışmanlığı için iletişime geçin. London adresi, telefon ve e-posta bilgileri ile başvuru formu.',
+    keywords:
+      'psikolog iletişim, açelya sarıoğlu iletişim, psikolojik danışmanlık randevu, online terapi randevu',
+  },
+}
+
+const siteUrl = 'https://acelyasarioglu.com'
+
+const toAbsoluteUrl = (value) => (value.startsWith('http') ? value : `${siteUrl}${value}`)
+
+const CONTACT_EMAIL = 'acelyasarioglu9@gmail.com'
+const CONTACT_DISPLAY_EMAIL = 'info@acelyasarioglu.com'
+const CONTACT_PHONE_TR = '+905536121546'
+const CONTACT_PHONE_UK = '+447541434812'
+const WHATSAPP_LINK = 'https://wa.me/905536121546'
+const INSTAGRAM_LINK = 'https://www.instagram.com/psikologacelyasarioglu/'
+const DOKTOR_TAKVIMI_PROFILE_LINK = 'https://www.doktortakvimi.com/acelya-sarioglu/psikoloji/kadikoy'
+const DOKTOR_TAKVIMI_LINK =
+  'https://www.doktortakvimi.com/acelya-sarioglu/psikoloji/kadikoy?utm_source=mailing&utm_medium=email&utm_campaign=new_opinion%23profile-opinions&fbclid=PAQ0xDSwMUDwBleHRuA2FlbQIxMQABp6l5gh7UD_d_oA7-DvOY7OE-nz2fSfE1snBdiWNq55eFX7n12mrLov9hCODw_aem_JRSenP5MsFkPla13Q5TRVw'
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`
+
+const ogImageByPath = {
+  '/': cpcHands,
+  '/yetiskin': heroYetiskin,
+  '/cocuk-ergen': heroCocukErgen,
+  '/terapi': heroTerapi,
+  '/otizm-dehb': heroOtizmDehb,
+  '/iletisim': heroIletisim,
+}
+
+const socialLinks = [
+  { id: 'whatsapp', label: 'WhatsApp', href: WHATSAPP_LINK },
+  { id: 'instagram', label: 'Instagram', href: INSTAGRAM_LINK },
+  { id: 'calendar', label: 'DoktorTakvimi', href: DOKTOR_TAKVIMI_LINK },
+]
+
+const profilePlatforms = [
+  {
+    name: 'LinkedIn',
+    href: 'https://uk.linkedin.com/in/a%C3%A7elya-sar%C4%B1o%C4%9Flu-362128152',
+    image: platformLinkedin,
+    summary: 'Profesyonel ağ profili ve kariyer görünürlüğü.',
+    highlights: [
+      'Profesyonel ağ ve akademik geçmiş',
+      'Klinik psikoloji uzmanlığı odaklı profil',
+      'Londra merkezli çalışma geçmişi',
+    ],
+  },
+  {
+    name: 'Psychology Today',
+    href: 'https://www.psychologytoday.com/gb/counselling/acelya-sarioglu-london/1438632',
+    image: platformPsychologyToday,
+    summary:
+      'Yetişkin ve ergenlerle Türkçe/İngilizce terapi; çocuk, ergen ve yetişkinler için yüz yüze ve online destek.',
+    highlights: [
+      'BPS ve Türk Psikologlar Derneği kayıtlı psikolog',
+      'CBT, Şema Terapi, Mindfulness, Çözüm Odaklı Terapi, Oyun Terapisi',
+      'Kaygı, OCD, panik atak, travma, sosyal anksiyete, fobiler, depresyon',
+    ],
+  },
+  {
+    name: 'Complicated Life',
+    href: 'https://complicated.life/find-a-therapist/london/counsellor-acelya-sarioglu',
+    image: platformItsComplicated,
+    summary:
+      'Yeni danışanlara açık profil: çocuk, ergen, yetişkin ve ailelerle çalışma; Türkiye ve Birleşik Krallık odaklı online/yüz yüze hizmet.',
+    highlights: [
+      'Uzmanlıklar: anksiyete, OCD, panik atak, PTSD, sosyal anksiyete, öfke, depresyon',
+      'Diller: Türkçe, İngilizce',
+      'Konum: London, United Kingdom',
+    ],
+  },
+  {
+    name: 'MHW Clinic',
+    href: 'https://mhwclinic.co.uk/acelya-sarioglu/',
+    image: platformMhwClinic,
+    summary:
+      'My Health and Wellbeing Clinic uzman profili: çocuk, ergen ve yetişkin psikolojisinde kapsamlı terapi, değerlendirme ve danışmanlık.',
+    highlights: [
+      'Uzmanlık alanları: Adult Psychotherapy, Child/Adolescent Psychotherapy, Autism & ADHD Assessment',
+      'Kanıta dayalı yaklaşım: CBT, Şema Terapi, Mindfulness, Çözüm Odaklı Terapi, Oyun Terapisi',
+      'Ebeveyn ve okul destek danışmanlığı dahil bütüncül bakım modeli',
+    ],
+  },
+]
+
+const eventPosts = [
+  {
+    id: 'event-1',
+    title: 'Ekibimizle Tanışın',
+    image: eventParticipation1,
+    href: 'https://www.instagram.com/mhwcpsychology/p/DTgBBEtjePw/',
+    summary:
+      'MHW Clinic ekibi tanıtım paylaşımı: terapi süreci hakkında bilgi alma ve ön görüşme planlama duyurusu.',
+  },
+  {
+    id: 'event-2',
+    title: 'Online Ebeveyn Semineri: Otizm & DEHB',
+    image: eventParticipation2,
+    href: 'https://www.instagram.com/psikologacelyasarioglu/p/DVtj11PoEvI/',
+    summary:
+      'Erken belirtileri fark etme semineri: otizm ve DEHB belirtileri, değerlendirme süreci ve ebeveynler için destek adımları.',
+  },
+  {
+    id: 'event-3',
+    title: 'Meet Our Psychologist: Açelya',
+    image: eventParticipation3,
+    href: 'https://www.instagram.com/mhwcpsychology/p/DTgId08jkgx/',
+    summary: 'Klinik profil paylaşımı: Açelya Sarıoğlu uzmanlığını ve klinik içindeki aktif rolünü öne çıkaran tanıtım içeriği.',
+  },
+]
+
+const routeLabelByPath = {
+  '/': 'Anasayfa',
+  '/yetiskin': 'Yetişkin Psikoterapi',
+  '/cocuk-ergen': 'Çocuk ve Ergen Psikoterapi',
+  '/terapi': 'Terapi ve Tedavi',
+  '/otizm-dehb': 'Otizm ve DEHB',
+  '/iletisim': 'İletişim',
+}
+
+const serviceByPath = {
+  '/yetiskin': {
+    name: 'Yetişkin Psikoterapi',
+    description: 'Kaygı, panik atak, depresyon, obsesif belirtiler ve ilişki zorlukları için kişiye özel psikoterapi desteği.',
+  },
+  '/cocuk-ergen': {
+    name: 'Çocuk ve Ergen Psikoterapi',
+    description: 'Çocuk ve ergenler için gelişim dönemine uygun terapi, ebeveyn danışmanlığı ve duygusal destek hizmeti.',
+  },
+  '/terapi': {
+    name: 'Terapi ve Tedavi Yaklaşımları',
+    description: 'BDT, Şema Terapi, Oyun Terapisi ve Mindfulness temelli, danışana özel yapılandırılmış terapi süreci.',
+  },
+  '/otizm-dehb': {
+    name: 'Otizm ve DEHB Değerlendirme',
+    description: 'Otizm ve DEHB için tarama, değerlendirme, raporlama ve psiko-eğitim odaklı profesyonel danışmanlık.',
+  },
+}
+
+const practiceSchema = {
+  '@type': 'Psychologist',
+  '@id': `${siteUrl}#practice`,
+  name: 'Uzman Klinik Psikolog Açelya Sarıoğlu',
+  url: siteUrl,
+  image: toAbsoluteUrl(acelyaPortrait),
+  email: CONTACT_DISPLAY_EMAIL,
+  telephone: CONTACT_PHONE_UK,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '97-99 Whitechapel Rd',
+    addressLocality: 'London',
+    postalCode: 'E1 1DT',
+    addressCountry: 'GB',
+  },
+  sameAs: [
+    INSTAGRAM_LINK,
+    DOKTOR_TAKVIMI_PROFILE_LINK,
+    'https://uk.linkedin.com/in/a%C3%A7elya-sar%C4%B1o%C4%9Flu-362128152',
+    'https://www.psychologytoday.com/gb/counselling/acelya-sarioglu-london/1438632',
+    'https://complicated.life/find-a-therapist/london/counsellor-acelya-sarioglu',
+    'https://mhwclinic.co.uk/acelya-sarioglu/',
+  ],
+  areaServed: ['TR', 'GB'],
+  knowsAbout: [
+    'Yetişkin Psikoterapi',
+    'Çocuk ve Ergen Terapisi',
+    'Otizm Değerlendirmesi',
+    'DEHB Değerlendirmesi',
+    'Online Terapi',
+  ],
+}
+
+function buildBreadcrumbSchema(path) {
+  const list = [{ name: 'Anasayfa', item: siteUrl }]
+
+  if (path !== '/') {
+    list.push({ name: routeLabelByPath[path], item: `${siteUrl}${path}` })
+  }
+
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: list.map((entry, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: entry.name,
+      item: entry.item,
+    })),
+  }
+}
+
+function buildServiceSchema(path) {
+  const service = serviceByPath[path]
+  if (!service) return null
+
+  return {
+    '@type': 'Service',
+    name: service.name,
+    description: service.description,
+    provider: { '@id': `${siteUrl}#practice` },
+    areaServed: ['TR', 'GB'],
+    availableChannel: [
+      {
+        '@type': 'ServiceChannel',
+        serviceUrl: `${siteUrl}${path}`,
+        availableLanguage: ['tr', 'en'],
+      },
+    ],
+  }
+}
+
+const schemaByPath = Object.keys(seoByPath).reduce((acc, path) => {
+  const graph = [practiceSchema, buildBreadcrumbSchema(path)]
+  const service = buildServiceSchema(path)
+
+  if (service) graph.push(service)
+
+  if (path === '/iletisim') {
+    graph.push({
+      '@type': 'ContactPage',
+      name: 'İletişim',
+      url: `${siteUrl}/iletisim`,
+    })
+  }
+
+  acc[path] = {
+    '@context': 'https://schema.org',
+    '@graph': graph,
+  }
+
+  return acc
+}, {})
+
+function setMetaTag(name, content, attr = 'name') {
+  let tag = document.head.querySelector(`meta[${attr}="${name}"]`)
+  if (!tag) {
+    tag = document.createElement('meta')
+    tag.setAttribute(attr, name)
+    document.head.appendChild(tag)
+  }
+  tag.setAttribute('content', content)
+}
+
+function setCanonical(url) {
+  let link = document.head.querySelector('link[rel="canonical"]')
+  if (!link) {
+    link = document.createElement('link')
+    link.setAttribute('rel', 'canonical')
+    document.head.appendChild(link)
+  }
+  link.setAttribute('href', url)
+}
+
+function setAlternateLink(hreflang, href) {
+  let link = document.head.querySelector(`link[rel="alternate"][hreflang="${hreflang}"]`)
+  if (!link) {
+    link = document.createElement('link')
+    link.setAttribute('rel', 'alternate')
+    link.setAttribute('hreflang', hreflang)
+    document.head.appendChild(link)
+  }
+  link.setAttribute('href', href)
+}
+
+function setJsonLd(schemaObj) {
+  let script = document.head.querySelector('#ld-json-main')
+  if (!script) {
+    script = document.createElement('script')
+    script.setAttribute('type', 'application/ld+json')
+    script.setAttribute('id', 'ld-json-main')
+    document.head.appendChild(script)
+  }
+  script.textContent = JSON.stringify(schemaObj)
+}
+
+function SeoManager() {
+  const location = useLocation()
+
+  useEffect(() => {
+    const meta = seoByPath[location.pathname] || seoByPath['/']
+    const absoluteUrl = `${siteUrl}${location.pathname}`
+    const absoluteImage = toAbsoluteUrl(ogImageByPath[location.pathname] || ogImageByPath['/'])
+
+    document.title = meta.title
+    setMetaTag('description', meta.description)
+    setMetaTag('keywords', meta.keywords)
+    setMetaTag('robots', 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1')
+    setMetaTag('og:title', meta.title, 'property')
+    setMetaTag('og:description', meta.description, 'property')
+    setMetaTag('og:type', 'website', 'property')
+    setMetaTag('og:site_name', 'Açelya Sarıoğlu', 'property')
+    setMetaTag('og:locale', 'tr_TR', 'property')
+    setMetaTag('og:url', absoluteUrl, 'property')
+    setMetaTag('og:image', absoluteImage, 'property')
+    setMetaTag('og:image:secure_url', absoluteImage, 'property')
+    setMetaTag('og:image:alt', meta.title, 'property')
+    setMetaTag('og:image:width', '1200', 'property')
+    setMetaTag('og:image:height', '630', 'property')
+    setMetaTag('twitter:title', meta.title)
+    setMetaTag('twitter:description', meta.description)
+    setMetaTag('twitter:image', absoluteImage)
+    setMetaTag('twitter:card', 'summary_large_image')
+    setCanonical(absoluteUrl)
+    setAlternateLink('tr-TR', absoluteUrl)
+    setAlternateLink('x-default', absoluteUrl)
+
+    const pageSchema = schemaByPath[location.pathname] || schemaByPath['/']
+    setJsonLd(pageSchema)
+  }, [location.pathname])
+
+  return null
+}
+
+function ScrollToTop() {
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [location.pathname])
+
+  return null
+}
+
+function SocialIcon({ id }) {
+  if (id === 'whatsapp') {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M19.1 4.9A9.95 9.95 0 0 0 12 2a10 10 0 0 0-8.7 15l-1.2 4.4 4.5-1.2A10 10 0 1 0 19.1 4.9ZM12 20a7.9 7.9 0 0 1-4-1.1l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 1 1 12 20Zm4.4-5.8c-.2-.1-1.3-.6-1.5-.6s-.3-.1-.5.1-.5.6-.6.7c-.1.1-.3.2-.5.1-1.3-.7-2.2-1.3-3.1-2.9-.2-.2 0-.4.1-.5.1-.1.2-.3.4-.4.1-.1.2-.2.3-.4.1-.2 0-.3 0-.4s-.5-1.2-.7-1.6c-.2-.4-.4-.3-.5-.3h-.4c-.1 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.1.9 2.3c.1.1 1.5 2.4 3.7 3.3 2.2.9 2.2.6 2.6.6s1.3-.5 1.5-1c.2-.6.2-1 .1-1.1-.1-.1-.2-.1-.5-.3Z" />
+      </svg>
+    )
+  }
+
+  if (id === 'instagram') {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.2A4.8 4.8 0 1 1 7.2 12 4.8 4.8 0 0 1 12 7.2Zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2Zm5.2-3.1a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2Z" />
+      </svg>
+    )
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm.9 15.9h-2v-6h2Zm-1-7.1a1.1 1.1 0 1 1 1.1-1.1 1.1 1.1 0 0 1-1.1 1.1Zm6 7.1h-2v-3.3c0-.8 0-1.8-1.1-1.8s-1.3.9-1.3 1.7v3.4h-2v-6h1.9v.8h.1a2.1 2.1 0 0 1 1.9-1c2 0 2.4 1.3 2.4 3.1Z" />
+    </svg>
+  )
+}
+
+function SocialLinks({ className = '' }) {
+  return (
+    <div className={`social-links ${className}`.trim()}>
+      {socialLinks.map((item) => (
+        <a key={item.id} href={item.href} target="_blank" rel="noreferrer" className={`social-link ${item.id}`}>
+          <SocialIcon id={item.id} />
+          <span>{item.label}</span>
+        </a>
+      ))}
+    </div>
+  )
+}
+
+function Header() {
+  const location = useLocation()
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [desktopOpen, setDesktopOpen] = useState('')
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true)
+  const [isAtTop, setIsAtTop] = useState(true)
+  const lastScrollYRef = useRef(0)
+  const isHome = location.pathname === '/'
+
+  useEffect(() => {
+    setMobileOpen(false)
+    setDesktopOpen('')
+    setIsHeaderVisible(true)
+    setIsAtTop(true)
+    lastScrollYRef.current = window.scrollY
+  }, [location.pathname])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY
+      setIsAtTop(currentY < 12)
+
+      if (currentY < 80) {
+        setIsHeaderVisible(true)
+      } else if (currentY < lastScrollYRef.current) {
+        setIsHeaderVisible(true)
+      } else {
+        setIsHeaderVisible(false)
+      }
+
+      lastScrollYRef.current = currentY
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const openData = useMemo(() => menuGroups[desktopOpen], [desktopOpen])
+
+  return (
+    <header className={`site-header ${isHome ? 'home-overlay' : ''} ${isAtTop ? 'at-top' : ''} ${isHeaderVisible ? 'is-visible' : 'is-hidden'}`}>
+      <div className="header-inner">
+        <Link className="brand" to="/">
+          <img src={brandLogo} alt="Açelya Klinik Psikoloji" className="brand-logo" />
+          <span className="sr-only">Açelya Klinik Psikoloji</span>
+        </Link>
+        <button className="burger" onClick={() => setMobileOpen((p) => !p)} aria-label="Menüyü aç">
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav className="desktop-nav" aria-label="Ana menu">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              className={`nav-button ${location.pathname === item.path ? 'active' : ''}`}
+              to={item.path}
+              onClick={() => {
+                if (menuGroups[item.path]) {
+                  setDesktopOpen((p) => (p === item.path ? '' : item.path))
+                }
+              }}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+        <SocialLinks className="header-social" />
+      </div>
+
+      {openData && (
+        <div className="mega-menu">
+          <div className="menu-image" style={{ backgroundImage: `url(${stockImages.menuClinic})` }} />
+          <div className="menu-content">
+            <div className="menu-top">
+              <h2>{openData.title}</h2>
+              <button className="menu-close" onClick={() => setDesktopOpen('')}>
+                Kapat
+              </button>
+            </div>
+            <div className="menu-grid">
+              <ul>
+                {openData.left.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <ul>
+                {openData.right.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="menu-image" style={{ backgroundImage: `url(${stockImages.menuFamily})` }} />
+        </div>
+      )}
+
+      {mobileOpen && (
+        <div className="mobile-panel">
+          <div className="mobile-links">
+            {navItems.map((item) => (
+              <Link key={item.path} to={item.path} className="mobile-link">
+                {item.label}
+              </Link>
+            ))}
+          </div>
+          <SocialLinks className="mobile-social" />
+        </div>
+      )}
+    </header>
+  )
+}
+
+function FloatingScrollArrows() {
+  const [canScrollUp, setCanScrollUp] = useState(false)
+  const [canScrollDown, setCanScrollDown] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const updateScrollState = () => {
+      const currentY = window.scrollY
+      const viewport = window.innerHeight
+      const pageHeight = document.documentElement.scrollHeight
+      const threshold = Math.max(320, viewport)
+
+      setCanScrollUp(currentY > 140)
+      setCanScrollDown(currentY + viewport < pageHeight - 140)
+      setIsVisible(currentY > threshold)
+    }
+
+    updateScrollState()
+    window.addEventListener('scroll', updateScrollState, { passive: true })
+    window.addEventListener('resize', updateScrollState)
+
+    return () => {
+      window.removeEventListener('scroll', updateScrollState)
+      window.removeEventListener('resize', updateScrollState)
+    }
+  }, [])
+
+  const scrollUp = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  const scrollDown = () => {
+    window.scrollBy({ top: Math.round(window.innerHeight * 0.85), behavior: 'smooth' })
+  }
+
+  return (
+    <div className={`floating-scroll-arrows ${isVisible ? 'is-visible' : 'is-hidden'}`} aria-label="Sayfa Kaydırma Kontrolleri">
+      <button
+        type="button"
+        className="scroll-arrow"
+        onClick={scrollUp}
+        aria-label="Yukarı Git"
+        disabled={!canScrollUp}
+      >
+        ↑
+      </button>
+      <button
+        type="button"
+        className="scroll-arrow"
+        onClick={scrollDown}
+        aria-label="Aşağı Git"
+        disabled={!canScrollDown}
+      >
+        ↓
+      </button>
+    </div>
+  )
+}
+
+function Hero({ title, subtitle, image, images, homeStyle = false, homeCtaLabel = 'Daha Fazla', homeCtaTo = '/iletisim' }) {
+  const hasCarousel = Array.isArray(images) && images.length > 0
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  useEffect(() => {
+    if (!hasCarousel) return undefined
+
+    const timer = window.setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % images.length)
+    }, 4500)
+
+    return () => window.clearInterval(timer)
+  }, [hasCarousel, images])
+
+  const heroBackground = hasCarousel ? images[activeIndex] : image
+
+  return (
+    <section className={`hero ${homeStyle ? 'home-clinic' : ''}`} style={{ backgroundImage: `linear-gradient(rgba(15, 44, 53, 0.45), rgba(15, 44, 53, 0.45)), url(${heroBackground})` }}>
+      <div className="hero-content">
+        <p>{subtitle}</p>
+        <h1>{title}</h1>
+        {!homeStyle ? (
+          <a href="#icerik" className="btn-primary">
+            Daha Fazla
+          </a>
+        ) : null}
+      </div>
+      {homeStyle ? (
+        <Link to={homeCtaTo} className="hero-contact-cta">
+          {homeCtaLabel}
+        </Link>
+      ) : null}
+    </section>
+  )
+}
+
+function CardGrid({ title, items }) {
+  return (
+    <section className="section" id="icerik">
+      <div className="section-head">
+        <h2>{title}</h2>
+      </div>
+      <div className="card-grid">
+        {items.map((item) => (
+          <article key={item.title} className="card">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function AffiliationsSection() {
+  const logos = [
+    { src: tpdLogo, alt: 'Türk Psikologlar Derneği' },
+    { src: bpsLogo, alt: 'The British Psychological Society' },
+    { src: isstLogo, alt: 'International Society of Schema Therapy' },
+    { src: datemLogo, alt: 'DATEM' },
+    { src: aptLogo, alt: 'Association for Play Therapy' },
+  ]
+
+  return (
+    <section className="section affiliations">
+      <div className="section-head centered">
+        <h2>Üye Olduğu Kurum ve Kuruluşlar</h2>
+      </div>
+      <div className="affiliations-grid">
+        {logos.map((logo) => (
+          <article key={logo.alt} className="affiliation-card">
+            <img src={logo.src} alt={logo.alt} loading="lazy" />
+            <p className="affiliation-caption">{logo.alt}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function PlatformReferencesSection() {
+  return (
+    <section className="section platform-references">
+      <div className="section-head centered">
+        <h2>Diğer Platformlar</h2>
+        <p className="platform-subtitle">Açelya Sarıoğlu profilini doğrulayabileceğiniz profesyonel platformlar</p>
+      </div>
+      <div className="platform-stack">
+        {profilePlatforms.map((platform, index) => (
+          <article
+            key={platform.name}
+            className={`platform-feature ${index % 2 === 1 ? 'reverse' : ''} ${index === 1 || index === 2 ? 'compact' : ''}`}
+          >
+            <div className="platform-feature-media">
+              <img src={platform.image} alt={`${platform.name} profil görüntüsü`} loading="lazy" />
+            </div>
+            <div className="platform-feature-content">
+              <div className="platform-feature-frame">
+                <h3>{platform.name}</h3>
+                <p>{platform.summary}</p>
+                <ul>
+                  {platform.highlights.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+                <a href={platform.href} target="_blank" rel="noreferrer" className="platform-link-btn">
+                  Profili Gör
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function InstagramWidgetSection() {
+  return (
+    <section className="instagram-events-showcase">
+      <div className="instagram-events-shell">
+        {eventPosts.map((post, index) => (
+          <article
+            key={post.id}
+            className={`instagram-event-tile ${index === 0 ? 'tile-left' : ''} ${index === 1 ? 'tile-center' : ''} ${index === 2 ? 'tile-right' : ''}`}
+          >
+            <div className="instagram-event-image-wrap">
+              <img src={post.image} alt={`${post.title} etkinlik görseli`} loading="lazy" />
+            </div>
+            <div className="instagram-event-head">
+              <span className="instagram-event-motif" aria-hidden="true"></span>
+              <h3>{post.title}</h3>
+            </div>
+            <p>{post.summary}</p>
+            <a href={post.href} target="_blank" rel="noreferrer" className="instagram-event-link">
+              Gönderiyi Gör
+            </a>
+          </article>
+        ))}
+      </div>
+
+      <div className="instagram-events-cta-wrap">
+        <a href={INSTAGRAM_LINK} target="_blank" rel="noreferrer" className="btn-primary dark-cta">
+          Instagram Profiline Git
+        </a>
+      </div>
+    </section>
+  )
+}
+
+function TestimonialsSection() {
+  const comments = [
+    {
+      name: 'K....M',
+      text: 'Gerek samimiyeti gerekse anlayışlı yaklaşımıyla olaylara farklı açılardan bakmamı ve kendimi daha iyi anlamamı sağladı. Altı aydır devam eden seanslarda verilen görevlerle sorunumun üzerine daha etkili gidebiliyorum.',
+    },
+    {
+      name: 'E.....',
+      text: 'Kaygı ve stres durumum için seans alıyorum. Seanslardan sonra ilerleme kaydetmek için görevler veriyor ve süreci takip ediyor. Bakış açımın değiştiğini ve kaygımın azalmaya başladığını fark ediyorum.',
+    },
+    {
+      name: 'A.....',
+      text: 'Açelya Hanım ile eşimden ayrıldığım dönemde çalıştım. Bu süreci atlatamayacağımı düşünürken, sağladığı farkındalık ve destek sayesinde kendimi daha güçlü ve özgüvenli hissediyorum.',
+    },
+  ]
+
+  return (
+    <section className="section testimonials">
+      <div className="section-head centered">
+        <h2>Danışan Görüşleri</h2>
+      </div>
+      <div className="testimonials-grid">
+        {comments.map((comment) => (
+          <article key={comment.name} className="testimonial-card">
+            <p>{comment.text}</p>
+            <h3>{comment.name}</h3>
+          </article>
+        ))}
+      </div>
+      <div className="centered-link-wrap">
+        <a href={DOKTOR_TAKVIMI_LINK} className="text-link dark" target="_blank" rel="noreferrer">
+          Tüm Yorumlar
+        </a>
+      </div>
+    </section>
+  )
+}
+
+function ServicePreviewSection() {
+  const previews = [
+    {
+      title: 'Yetişkin Psikoterapi',
+      text: 'Terapide herkese uyan tek bir yöntem yoktur. Hepimiz farklıyız ve terapiye farklı sebeplerle geliriz. İşte bu yüzden yaklaşımımız kişiye özeldir...',
+      to: '/yetiskin',
+    },
+    {
+      title: 'Çocuk ve Ergen',
+      text: 'Çocuk ve ergen terapisi, çocukların zorlayıcı düşüncelerini, duygularını ve davranışlarını ifade edebilecekleri güvenli bir alan sunar...',
+      to: '/cocuk-ergen',
+    },
+    {
+      title: 'Otizm ve DEHB',
+      text: 'Çocuklar, ergenler ve yetişkinler için otizm tanısı almak gelişimsel zorlukları anlamak ve çözmek açısından önemlidir...',
+      to: '/otizm-dehb',
+    },
+    {
+      title: 'Terapi',
+      text: 'Terapi, birçok farklı şekilde uygulanabilir. Her danışanım için en etkili yaklaşımı belirleyerek süreci ihtiyaçlara göre şekillendiriyorum...',
+      to: '/terapi',
+    },
+  ]
+
+  return (
+    <section className="section service-preview">
+      <div className="service-preview-grid">
+        {previews.map((item) => (
+          <article key={item.title} className="service-preview-card">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            <Link className="text-link dark" to={item.to}>
+              Daha Fazlası İçin
+            </Link>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function TherapyMethodsSection() {
+  const leftColumn = [
+    'Bilişsel Davranışçı Terapi (BDT)',
+    'Şema Terapi',
+    'Oyun Terapisi',
+    'Mindfulness Temelli Yaklaşım',
+    'Kısa Süreli Çözüm Odaklı Terapi',
+    'Kaygı ve Stres Çalışmaları',
+    'Panik Atak ve Obsesif Belirtiler',
+  ]
+
+  const rightColumn = [
+    'Duygu Düzenleme ve Baş Etme Becerileri',
+    'İlişki ve İletişim Zorlukları',
+    'Travma Sonrası Destek',
+    'Çocuk ve Ergen Psikoterapi',
+    'Ebeveyn Danışmanlığı',
+    'Otizm ve DEHB Değerlendirme Sonrası Psiko-eğitim',
+    'Online Terapi',
+  ]
+
+  return (
+    <section className="therapy-showcase section">
+      <div className="therapy-showcase-image" style={{ backgroundImage: `url(${stockImages.therapyShowcase})` }} />
+      <div className="therapy-showcase-content">
+        <div className="therapy-showcase-frame">
+          <h2>Terapi Yaklaşımları ve Tedavi</h2>
+          <p>
+            Terapi, birçok farklı şekilde uygulanabilir. Bazı terapi yaklaşımları belirli sorunlara daha uygunken, bazı kişiler de belirli
+            yöntemlerle daha iyi uyum sağlar. Bu yüzden, her danışanım için en etkili yaklaşımı belirleyerek süreci onların ihtiyaçlarına göre
+            şekillendiriyorum.
+          </p>
+          <div className="therapy-columns">
+            <ul>
+              {leftColumn.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <ul>
+              {rightColumn.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <Link className="btn-primary dark-cta therapy-showcase-cta" to="/iletisim">
+            İletişim
+          </Link>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function HomeChelseaSplit({ title, text, image, reverse = false }) {
+  return (
+    <section className={`chelsea-split-wrap ${reverse ? 'reverse' : ''}`}>
+      <div className="chelsea-split-image" style={{ backgroundImage: `url(${image})` }} />
+      <div className="chelsea-split-panel">
+        <article className="chelsea-split-frame">
+          <h2>{title}</h2>
+          <p>{text}</p>
+          <Link to="/iletisim" className="text-link chelsea-link">İletişime Geçin</Link>
+        </article>
+      </div>
+    </section>
+  )
+}
+
+function SplitSection({ title, text, image, reverse = false }) {
+  return (
+    <section className={`split ${reverse ? 'reverse' : ''}`}>
+      <div className="split-image" style={{ backgroundImage: `url(${image})` }} />
+      <div className="split-content">
+        <h2>{title}</h2>
+        <p>{text}</p>
+        <Link to="/iletisim" className="text-link">İletişime Geçin</Link>
+      </div>
+    </section>
+  )
+}
+
+function MockForm({ title = 'Danışmanlık Başvuru Formu' }) {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: '',
+    consent: false,
+  })
+  const [status, setStatus] = useState({ type: '', message: '' })
+  const [isSending, setIsSending] = useState(false)
+
+  const handleChange = (event) => {
+    const { name, value, type, checked } = event.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }))
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      setStatus({ type: 'error', message: 'Lütfen zorunlu alanları doldurun.' })
+      return
+    }
+
+    if (!formData.consent) {
+      setStatus({ type: 'error', message: 'Lütfen gizlilik onay kutusunu işaretleyin.' })
+      return
+    }
+
+    setIsSending(true)
+    setStatus({ type: '', message: '' })
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          _subject: 'Yeni Danışmanlık Başvurusu - acelyasarioglu.com',
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Form gönderilemedi')
+      }
+
+      setStatus({ type: 'success', message: 'Mesajınız başarıyla gönderildi. En kısa sürede dönüş sağlanacaktır.' })
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: '',
+        consent: false,
+      })
+    } catch {
+      setStatus({
+        type: 'error',
+        message: `Form şu anda gönderilemedi. Lütfen tekrar deneyin veya ${CONTACT_EMAIL} adresine e-posta gönderin.`,
+      })
+    } finally {
+      setIsSending(false)
+    }
+  }
+
+  return (
+    <section className="section form-wrap">
+      <div className="section-head">
+        <h2>{title}</h2>
+      </div>
+      <form className="mock-form" onSubmit={handleSubmit}>
+        <input
+          name="firstName"
+          placeholder="Ad"
+          value={formData.firstName}
+          onChange={handleChange}
+          required
+        />
+        <input name="lastName" placeholder="Soyad" value={formData.lastName} onChange={handleChange} required />
+        <input name="email" placeholder="Email" type="email" value={formData.email} onChange={handleChange} required />
+        <input name="phone" placeholder="Telefon numaranız" type="tel" value={formData.phone} onChange={handleChange} />
+        <textarea
+          name="message"
+          placeholder="Kısaca nasıl destek almak istediğinizi yazabilirsiniz"
+          rows={5}
+          value={formData.message}
+          onChange={handleChange}
+          required
+        />
+        <label className="checkbox">
+          <input type="checkbox" name="consent" checked={formData.consent} onChange={handleChange} required />
+          Gizlilik metnini okudum ve kabul ediyorum.
+        </label>
+        {status.message ? <p className={`form-status ${status.type}`}>{status.message}</p> : null}
+        <button type="submit" className="btn-primary">
+          {isSending ? 'Gönderiliyor...' : 'Gönder'}
+        </button>
+      </form>
+    </section>
+  )
+}
+
+function PageTemplate({ title, subtitle, image, introTitle, introText, cardsTitle, cards, splitA, splitB, currentPath }) {
+  return (
+    <main>
+      <Hero title={title} subtitle={subtitle} image={image} />
+      <section className="section" id="icerik">
+        <div className="section-head">
+          <h2>{introTitle}</h2>
+        </div>
+        <p>{introText}</p>
+      </section>
+      <CardGrid title={cardsTitle} items={cards} />
+      <SplitSection title={splitA.title} text={splitA.text} image={splitA.image} />
+      <SplitSection title={splitB.title} text={splitB.text} image={splitB.image} reverse />
+      <RelatedServicesSection currentPath={currentPath} />
+      <MockForm />
+    </main>
+  )
+}
+
+function RelatedServicesSection({ currentPath }) {
+  const items = navItems.filter((item) => item.path !== currentPath && item.path !== '/iletisim')
+
+  return (
+    <section className="section related-services" aria-labelledby="related-services-title">
+      <div className="section-head">
+        <h2 id="related-services-title">İlgili Hizmetler</h2>
+      </div>
+      <div className="related-services-links">
+        {items.map((item) => (
+          <Link key={item.path} to={item.path} className="related-service-link">
+            {item.label}
+          </Link>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+function YetiskinPage() {
+  return (
+    <PageTemplate
+      title="Yetişkin Psikoterapi"
+      subtitle="Kişiye özel terapi ve danışmanlık"
+      image={heroYetiskin}
+      introTitle="Yetişkin Psikoterapi"
+      introText="Terapide herkese uyan tek bir yöntem yoktur. Hepimiz farklıyız ve terapiye farklı sebeplerle geliriz. Bazı insanlar belirli bir hedef üzerinde çalışmak için terapiye gelir. Bazıları geçmişlerini daha derinlemesine anlamak ve bunun bugün onları nasıl etkilediğini keşfetmek ister. Kimileri ise sadece bir şeylerin ters gittiğini hisseder ama tam olarak nedenini bilemez. İşte bu yüzden yaklaşımımız kişiye özeldir. Bize ulaştığınız andan itibaren size en doğru desteği sağlamaya odaklanıyoruz. İyi bir terapi, doğru eşleşmeyi bulmakla ilgilidir hem terapistinizle kurduğunuz bağ açısından hem de üzerinde çalışmak istediğiniz konu ve terapistin benimsediği yöntem açısından. Sizi doğru psikologla eşleştirmek için ihtiyaçlarınız, hedefleriniz ve öğrenme tarzınız gibi çeşitli faktörleri dikkate alıyoruz. Bu kişiye özel yaklaşım, terapiye başladıktan sonra da devam ediyor. Tüm psikologlarımız birden fazla terapi yöntemi konusunda eğitimlidir, bu sayede süreciniz boyunca size en fazla fayda sağlayacağını düşündükleri yaklaşıma göre yöntemlerini uyarlayabilirler. Yetişkin psikoterapi seanslarımı Londra'da ikamet eden danışanlarımla My Health and Wellbeing Clinic'te yüz yüze olarak düzenlerken, Londra dışında yaşayan danışanlarıma online olarak hizmet vermekteyim."
+      cardsTitle="Yetişkinlerle Çalıştığım Başlıca Konular"
+      cards={[
+        { title: 'Kaygı ve Stres', text: 'Danışanlar terapiye çok farklı sebeplerle gelebilir. Belirli bir ruh sağlığı sorunu ile mücadele ediyor olabilirsin ya da sadece içten içe bir şeylerin yolunda gitmediğini hissedebilirsin.' },
+        { title: 'Duygu Durumu ve İlişkiler', text: 'Her durumda, sana en iyi şekilde destek olmak için buradayım. Geniş bir yelpazede farklı konular üzerine çalışıyorum.' },
+        { title: 'Kişiye Özel Planlama', text: 'Her danışanım için süreci kişiye özel olarak planlıyor ve en uygun terapi yaklaşımını belirleyerek ilerliyorum.' },
+        { title: 'Online ve Yüz Yüze Destek', text: 'Eğer yaşadığın zorlukla ilgili destek alma zamanının geldiğini düşünüyorsan destek almak için benimle iletişime geçebilirsin.' },
+      ]}
+      splitA={{
+        title: 'Yetişkinlerle Çalıştığım Başlıca Konular',
+        text: 'Danışanlar terapiye çok farklı sebeplerle gelebilir. Belirli bir ruh sağlığı sorunu ile mücadele ediyor olabilirsin ya da sadece içten içe bir şeylerin yolunda gitmediğini hissedebilirsin. Her durumda, sana en iyi şekilde destek olmak için buradayım. Geniş bir yelpazede farklı konular üzerine çalışıyorum.',
+        image: stockImages.yetiskinSplitA,
+      }}
+      splitB={{
+        title: 'Destek Sürecine Başlayın',
+        text: 'Eğer yaşadığın zorlukla ilgili destek alma zamanının geldiğini düşünüyorsan destek almak için benimle iletişime geçebilirsin. Her danışanım için süreci kişiye özel olarak planlıyor ve en uygun terapi yaklaşımını belirleyerek ilerliyorum.',
+        image: stockImages.yetiskinSplitB,
+      }}
+      currentPath="/yetiskin"
+    />
+  )
+}
+
+function CocukPage() {
+  return (
+    <PageTemplate
+      title="Çocuk ve Ergen Psikoterapi"
+      subtitle="Gelişim dönemlerine uygun güvenli destek alanı"
+      image={heroCocukErgen}
+      introTitle="Çocuk ve Ergen Psikoterapi"
+      introText="Çocuk ve ergen terapisi, yetişkin terapisine benzer şekilde, çocukların zorlayıcı düşüncelerini, duygularını ve davranışlarını ifade edebilecekleri güvenli bir alan sunar. Tıpkı yetişkinler gibi, çocuklar da büyük yaşam değişimlerinden (boşanma, okul değişikliği, sevilen birini kaybetme gibi) duygusal olarak etkilenebilir. Bazı durumlarda, bu duygusal zorluklar zamanla kendiliğinden düzelirken, bazen ise düzelmez. Eğer çocuğunuzun böyle bir durum yaşadığını düşünüyorsanız, onun ihtiyaç duyduğu desteği alabilmesi için uzman bir terapistten yardım almak önemlidir. Çocukken, çoğu zaman duygularımızı tam olarak ifade edecek kelimelere veya yaşam deneyimine sahip olmayız. Bu yüzden, çocukların hayatındaki yetişkinlerin, bir şeylerin yolunda gitmediğini fark etmeleri ve harekete geçmeleri büyük önem taşır."
+      cardsTitle="Çocuklarla Çalıştığım Başlıca Konular"
+      cards={[
+        { title: 'Çocuk Psikoloğu', text: 'Çocuk Psikoloğu, yaşam boyu süren ve yaşamın temellerini oluşturan çocukluk döneminde çocuklara psikolojik destek sağlayan uzmandır.' },
+        { title: 'Bireysel Farklılıklar', text: 'Çocukların ihtiyaçları, mizacına, çevre koşullarına, anne-baba tutumlarına ve yaşına göre değişim gösterir.' },
+        { title: 'Oyun Terapisi', text: 'Çocuklarla çalışırken sık kullandığım ekollerden biri Oyun Terapisidir.' },
+        { title: 'Bilişsel ve Davranışçı Terapiler', text: 'Çocuklarla çalışırken sık kullandığım diğer yaklaşım Bilişsel ve Davranışçı Terapilerdir.' },
+      ]}
+      splitA={{
+        title: 'Çocuğunuz İçin Güvenli Alan',
+        text: 'Çocuk Psikoloğu, yaşam boyu süren ve yaşamın temellerini oluşturan çocukluk döneminde çocuklara psikolojik destek sağlayan uzmandır. Çocukların ihtiyaçları, mizacına, çevre koşullarına, anne-baba tutumlarına ve yaşına göre değişim gösterir.',
+        image: stockImages.cocukSplitA,
+      }}
+      splitB={{
+        title: 'Çocuklarla Çalışırken Kullandığım Ekoller',
+        text: 'Çocuklarla çalışırken sık kullandığım ekoller: Oyun terapisi, Bilişsel ve Davranışçı Terapiler.',
+        image: stockImages.cocukSplitB,
+      }}
+      currentPath="/cocuk-ergen"
+    />
+  )
+}
+
+function TerapiPage() {
+  return (
+    <PageTemplate
+      title="Terapi ve Tedavi"
+      subtitle="Bilimsel temelli, kişiye özel terapi yaklaşımları"
+      image={heroTerapi}
+      introTitle="Terapi ve Tedavi"
+      introText="Terapi, birçok farklı şekilde uygulanabilir. Bazı terapi yaklaşımları belirli sorunlara daha uygunken, bazı kişiler de belirli yöntemlerle daha iyi uyum sağlar. Bu yüzden, her danışanım için en etkili yaklaşımı belirleyerek süreci onların ihtiyaçlarına göre şekillendiriyorum. Farklı terapi ekollerinden eğitimlerim ile terapi sürecini tamamen danışanlarımın ihtiyaçlarına özel olarak uyarlayabiliyor ve en uygun yaklaşımı belirleyerek en iyi şekilde destek sağlayabiliyorum."
+      cardsTitle="Terapi Yaklaşımları"
+      cards={[
+        { title: 'Bilişsel ve Davranışçı Terapiler', text: 'Bilimsel temelli ve yapılandırılmış tekniklerle düşünce, duygu ve davranış örüntülerini ele alır.' },
+        { title: 'Şema Terapi', text: 'Kökleşmiş yaşam örüntülerini ve ilişkisel döngüleri fark ederek daha işlevsel bir iç denge kurmayı destekler.' },
+        { title: 'Oyun Terapisi', text: 'Özellikle çocuklarla çalışırken duyguların ifade edilmesini ve güvenli biçimde işlenmesini kolaylaştırır.' },
+        { title: 'Mindfulness', text: 'Anda kalma, farkındalık kazanma ve duygu düzenleme becerilerini güçlendiren bir yaklaşım sunar.' },
+      ]}
+      splitA={{
+        title: 'Kısa Süreli Çözüm Odaklı Terapi',
+        text: 'Danışanın güçlü yönlerini ve hedeflerini merkeze alarak, daha kısa sürede işlevsel adımlar atılmasına yardımcı olur.',
+        image: stockImages.terapiSplitA,
+      }}
+      splitB={{
+        title: 'Online Terapi',
+        text: 'Terapi ve Uzman Danışmanlık Hizmetleri Londra ile sınırlı kalmayıp, dünya genelinde çevrimiçi özel terapi seansları ve danışmanlık hizmetleri sunmaktadır. Esnek terapi seçenekleriyle, size uygun bir zaman ve mekanda görüşmeler planlanmaktadır. Çevrimiçi terapi seçenekleri hakkında daha fazla bilgi almak için lütfen iletişime geçin.',
+        image: stockImages.terapiSplitB,
+      }}
+      currentPath="/terapi"
+    />
+  )
+}
+
+function OtizmPage() {
+  return (
+    <PageTemplate
+      title="Otizm ve DEHB"
+      subtitle="Tanı, değerlendirme ve danışmanlık"
+      image={heroOtizmDehb}
+      introTitle="Otizm ve DEHB Tanı ve Değerlendirme"
+      introText="Çocuklar, ergenler ve yetişkinler için otizm tanısı almak, gelişimsel zorlukları anlamak ve çözmek açısından önemlidir. Küçük çocukların ebeveynleri, gelişim farklılıklarını gözlemleyebilir ve bunların zamanla düzeleceğini umabilirler. Ancak, otizmle ilgili sorunlar devam ederse, profesyonel bir tanı almak gereklidir. Bu tanı, çocuğun ihtiyaçlarını belirlemeye yardımcı olur ve gelişimini artıracak özel destek sunar. Yetişkinler için otizm tanısı, yaşadıkları zorluklar hakkında netlik sağlar. Tanınmamış otizm, ilişkilerde ve sosyal ortamlarda sorunlara yol açabilir. Resmi bir tanı, bu zorlukları anlamayı ve iyileştirecek desteklere erişmeyi sağlar. Her iki durumda da tanı, bireylerin karşılaştığı zorlukları anlamalarına yardımcı olur ve uygun destek ve stratejilere erişim sağlar. Bu süreç, otizmi yönetmede daha etkili ve destekleyici bir yaklaşım sunar."
+      cardsTitle="Otizm ve DEHB Hizmet Kapsamı"
+      cards={[
+        { title: 'Otizm ve DEHB Taraması', text: 'Otizm, DEHB taraması, değerlendirmesi ve danışmanlığı hizmeti vermekteyim.' },
+        { title: 'Nörogelişimsel Değerlendirme', text: 'Otizm, Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) dahil olmak üzere nörogelişimsel bozuklukların değerlendirilmesi ve yönetimi konusunda uzmanım.' },
+        { title: 'Bakım Paketi ve Raporlama', text: 'Altın standart değerlendirme araçlarını kullanarak kapsamlı nörogelişimsel tarama ve değerlendirme hizmetleri sunuyorum. Değerlendirme sonrasında, bireyin ihtiyaçlarına özel olarak hazırlanmış bir bakım paketi sunuyorum.' },
+        { title: 'Ek Ruh Sağlığı Desteği', text: 'Değerlendirme veya danışmanlık sürecinde, kaygı bozuklukları, depresif ruh hali ve obsesif davranışlar gibi diğer ruh sağlığı sorunları da ortaya çıkabilir. Bu tür zorluklar için de gerekli tedavi ve destek sunmaktayım.' },
+      ]}
+      splitA={{
+        title: 'Kapsamlı Nörogelişimsel Değerlendirme',
+        text: 'Değerlendirme raporunda, Psiko-eğitim, eğitim ve sosyal ortamlarda uygun desteğe erişimi artıracak öneriler ve yönlendirmeleri içermektedir.',
+        image: stockImages.otizmSplitA,
+      }}
+      splitB={{
+        title: 'Bilgi ve Randevu',
+        text: 'Otizm ve Dikkat Eksikliği ve Hiperaktivite Bozukluğu Değerlendirme ve Tanı süreçleri ile ilgili bilgi almak için benimle iletişime geçebilirsiniz.',
+        image: stockImages.otizmSplitB,
+      }}
+      currentPath="/otizm-dehb"
+    />
+  )
+}
+
+function IletisimPage() {
+  return (
+    <main>
+      <Hero title="İletişim" subtitle="Terapi, Otizm ve DEHB Uzman Danışmanlığı ve Tanı servisleri" image={heroIletisim} />
+      <section className="section contact-layout" id="icerik">
+        <article>
+          <h2>İletişim Bilgileri</h2>
+          <p>Terapi, Otizm ve DEHB Uzman Danışmanlığı ve Tanı servisleri için bugün iletişime geçebilirsiniz.</p>
+          <p>Adres: 97-99 Whitechapel Rd, London E1 1DT</p>
+          <p>
+            Telefon: <a className="contact-link" href={`tel:${CONTACT_PHONE_TR}`}>+905536121546</a> (Türkiye), <a className="contact-link" href={`tel:${CONTACT_PHONE_UK}`}>+447541434812</a> (Birleşik Krallık)
+          </p>
+          <p>
+            E-posta: <a className="contact-link" href={`mailto:${CONTACT_DISPLAY_EMAIL}`}>{CONTACT_DISPLAY_EMAIL}</a>
+          </p>
+          <SocialLinks className="contact-actions" />
+        </article>
+        <article className="map-box">
+          <iframe
+            title="Klinik Konumu"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=97-99%20Whitechapel%20Rd%2C%20London%20E1%201DT&output=embed"
+          />
+        </article>
+      </section>
+      <MockForm title="İletişim Kutusu" />
+    </main>
+  )
+}
+
+function HomePage() {
+  return (
+    <main>
+      <Hero
+        title="Terapi Yolculuğunuza Bugün Başlayın"
+        subtitle="Uzman Klinik Psikolog Açelya Sarıoğlu"
+        image={homeCarouselImages[0]}
+        images={homeCarouselImages}
+        homeStyle
+        homeCtaLabel="İletişim"
+        homeCtaTo="/iletisim"
+      />
+      <section className="section" id="icerik">
+        <div className="home-intro-grid">
+          <figure className="home-intro-image-wrap">
+            <img src={acelyaPortrait} alt="Uzman Klinik Psikolog Açelya Sarıoğlu" className="home-intro-image" loading="lazy" />
+          </figure>
+          <article className="home-intro-copy">
+            <div className="section-head centered">
+              <h2>Uzmanlık ve Danışmanlık</h2>
+            </div>
+            <p className="meta-line">Uzman Klinik Psikolog Açelya Sarıoğlu</p>
+            <p className="meta-line">MSc GMBPsS</p>
+            <p>
+              Uzman Klinik Psikolog Açelya Sarıoğlu, Lisans eğitimlerini Yeditepe Üniversitesi Psikoloji ve İşletme bölümlerinde %100 burslu olarak tamamlamıştır. İngiltere'de bulunan Bournemouth Üniversitesi'nde Klinik Psikoloji yüksek lisans programını başarıyla tamamlamış olup şu anda British Psychology Society ve Türk Psikologlar Derneği'ne kayıtlı bir psikologdur.
+            </p>
+            <p>
+              2021 yılında Almanya'da yürütülen, bebeklerde güvenli bağlanmayı hipotezleyen psikolojik bir araştırmada araştırma asistanı olarak görev almıştır. İngiltere'de Otizm ve Dikkat Eksikliği ve Hiperaktivite Bozukluğu alanlarında çeşitli kurum ve kuruluşlarda Psikolog olarak çalışmış olup, şu anda Londra'da My Health and Wellbeing Klinikte çocuk/ergen ve yetişkin danışanlarıyla yüz yüze seanslar gerçekleştirmektedir.
+            </p>
+            <p>
+              Bilişsel Davranışçı Terapi, Şema Terapi, Mindfulness, Kısa Süreli Çözüm Odaklı Terapi ve Oyun Terapisi gibi uluslararası akreditasyona sahip eğitimleriyle danışanlarına hizmet sunmaktadır. Beden ve ruh sağlığının birbirinden ayrılmaz olduğu inancıyla psikoterapi çalışmalarını bütüncül bir bakış açısıyla sürdürmektedir.
+            </p>
+            <Link to="/iletisim" className="btn-primary dark-cta">
+              Şimdi İletişime Geçin
+            </Link>
+          </article>
+        </div>
+      </section>
+      <CardGrid
+        title="Çalışma Alanlarım"
+        items={[
+          { title: 'Yetişkin Psikoterapi', text: 'Kaygı, depresyon, panik atak, travma sonrası stres ve ilişki zorlukları gibi alanlarda kişiye özel terapi süreci.' },
+          { title: 'Çocuk ve Ergen', text: 'Duygusal ve davranışsal zorluklarda çocuğun gelişim dönemine uygun yapılandırılmış psikolojik destek.' },
+          { title: 'Otizm ve DEHB', text: 'Tarama, değerlendirme, raporlama ve ihtiyaçlara uygun yönlendirmeyi içeren nörogelişimsel destek modeli.' },
+          { title: 'Terapi Ekolleri', text: 'Bilişsel ve Davranışçı Terapiler, Şema Terapi, Oyun Terapisi, Mindfulness ve çözüm odaklı yaklaşımlar.' },
+        ]}
+      />
+      <HomeChelseaSplit
+        title="Özenle Uyarlanmış Terapi"
+        text="Günlük kaygılardan daha karmaşık psikolojik zorluklara kadar, ihtiyaçlarınıza uygun terapi ve tedavi yöntemlerini birlikte belirliyoruz. Süreç boyunca hedef; semptomlarda kısa sürede rahatlama ve kalıcı iyilik halidir."
+        image={stockImages.homeSplitA}
+      />
+      <HomeChelseaSplit
+        title="En İyi Tedavi Sonuçları"
+        text="Terapi seanslarımda bilimsel etkinliği kanıtlanmış yöntemleri kullanıyorum. Yapılandırılmış ve kişiye özel planlanan bu süreç, danışanların işlevselliğini artırmayı ve yaşam kalitesini güçlendirmeyi hedefler."
+        image={stockImages.homeSplitB}
+        reverse
+      />
+      <ServicePreviewSection />
+      <TherapyMethodsSection />
+      <TestimonialsSection />
+      <AffiliationsSection />
+      <MockForm title="İletişim Kutusu" />
+      <PlatformReferencesSection />
+      <InstagramWidgetSection />
+    </main>
+  )
+}
+
+function Footer() {
+  return (
+    <footer className="site-footer">
+      <div>
+        <h3>Açelya Klinik Psikoloji</h3>
+        <p>Yetişkin, çocuk ve ergen psikoterapi hizmetleri ile otizm ve DEHB değerlendirme danışmanlığı.</p>
+      </div>
+      <div>
+        <h4>Hızlı Linkler</h4>
+        <ul>
+          <li>
+            <Link to="/">Anasayfa</Link>
+          </li>
+          {navItems.map((item) => (
+            <li key={item.path}>
+              <Link to={item.path}>{item.label}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h4>Bizi Takip Edin</h4>
+        <SocialLinks className="footer-social" />
+      </div>
+    </footer>
+  )
+}
+
+function AppShell() {
+  return (
+    <>
+      <SeoManager />
+      <ScrollToTop />
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/yetiskin" element={<YetiskinPage />} />
+        <Route path="/cocuk-ergen" element={<CocukPage />} />
+        <Route path="/terapi" element={<TerapiPage />} />
+        <Route path="/otizm-dehb" element={<OtizmPage />} />
+        <Route path="/iletisim" element={<IletisimPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+      <Footer />
+      <FloatingScrollArrows />
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppShell />
+    </BrowserRouter>
+  )
+}
+
+export default App
