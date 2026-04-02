@@ -1,6 +1,6 @@
 # Acelya Klinik Psikoloji - React Site
 
-This project is built with React + Vite and is configured for GitHub Pages deployment.
+This project is built with React + Vite and is configured for Vercel deployment.
 
 ## Local development
 
@@ -15,20 +15,30 @@ npm run dev
 npm run build
 ```
 
-## Deploy to GitHub Pages
+## Deploy to Vercel
 
-Before first deploy:
+First deploy:
 
-1. Create a GitHub repository and push this project to it.
-2. In GitHub repo settings, enable Pages and set Source to the `gh-pages` branch (if requested).
+1. Import this GitHub repository into Vercel.
+2. Keep default framework detection (`Vite`).
+3. Keep default output directory (`dist`).
+4. Deploy.
 
-Then deploy with one command:
+After that, each `git push` to `main` will trigger an automatic production deployment.
+
+You can also deploy from CLI:
+
 
 ```bash
 npm run deploy
 ```
 
 Notes:
+1. SPA routing is supported via [vercel.json](vercel.json).
+2. For local production testing, run:
 
-1. Routing uses hash URLs (`/#/yetiskin`) so direct page refresh works on GitHub Pages.
+```bash
+npm run build
+npm run preview
+```
 2. Static asset base is configured to work from project subpaths on GitHub Pages.
