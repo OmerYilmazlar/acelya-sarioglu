@@ -131,7 +131,7 @@ const siteUrl = 'https://acelyasarioglu.com'
 const toAbsoluteUrl = (value) => (value.startsWith('http') ? value : `${siteUrl}${value}`)
 
 const CONTACT_EMAIL = 'acelyasarioglu9@gmail.com'
-const CONTACT_DISPLAY_EMAIL = 'info@acelyasarioglu.com'
+const CONTACT_DISPLAY_EMAIL = 'acelyasarioglu9@gmail.com'
 const CONTACT_PHONE_TR = '+905536121546'
 const CONTACT_PHONE_UK = '+447541434812'
 const WHATSAPP_LINK = 'https://wa.me/905536121546'
