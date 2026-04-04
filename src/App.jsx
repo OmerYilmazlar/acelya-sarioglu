@@ -711,11 +711,12 @@ function CardGrid({ title, items }) {
           const isExpanded = Boolean(expandedCards[item.title])
 
           return (
-            <article key={item.title} className="card">
+            <article key={item.title} className={`card ${isExpanded ? 'expanded' : ''}`}>
               <h3>{item.title}</h3>
               <p className="card-summary">{item.text}</p>
               {isExpandable ? (
                 <>
+                  {isExpanded ? <p className="card-read-more-text">{item.readMoreText}</p> : null}
                   <button
                     type="button"
                     className="card-read-more-btn"
@@ -724,7 +725,6 @@ function CardGrid({ title, items }) {
                   >
                     {isExpanded ? 'Daha Az Göster' : 'Devamını Oku'}
                   </button>
-                  {isExpanded ? <p className="card-read-more-text">{item.readMoreText}</p> : null}
                 </>
               ) : null}
             </article>

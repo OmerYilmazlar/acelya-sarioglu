@@ -523,14 +523,14 @@ a {
 .card {
   background: var(--white);
   border: 1px solid var(--line);
-  padding: 22px;
+  padding: 20px;
   min-height: 230px;
   display: flex;
   flex-direction: column;
 }
 
 .card-grid.card-grid-three .card {
-  min-height: 300px;
+  min-height: 250px;
 }
 
 .card h3 {
@@ -545,7 +545,7 @@ a {
 }
 
 .card-summary {
-  flex-grow: 1;
+  min-height: 82px;
   white-space: pre-line;
 }
 
@@ -569,6 +569,7 @@ a {
 
 .card-read-more-text {
   margin-top: 12px;
+  margin-bottom: 10px;
   font-size: 0.97rem;
   line-height: 1.7;
   white-space: pre-line;
