@@ -413,7 +413,7 @@ a {
 
 .hero.home-clinic .hero-content p {
   font-size: 0.74rem;
-  letter-spacing: 0.22em;
+  font-size: clamp(2rem, 4.4vw, 3.85rem);
   font-weight: 700;
   margin-bottom: 12px;
 }
