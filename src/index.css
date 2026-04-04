@@ -61,6 +61,7 @@ a {
   background: transparent;
   border-bottom: 0;
   backdrop-filter: none;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), transparent);
 }
 
 .site-header.home-overlay:not(.at-top) {
@@ -216,6 +217,18 @@ a {
   margin-left: 0;
 }
 
+.site-header.home-overlay.at-top .header-social .social-link {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.65rem;
+  backdrop-filter: blur(4px);
+}
+
+.site-header.home-overlay.at-top .header-social .social-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
 .site-header.home-overlay:not(.at-top) .header-social .social-link {
   color: var(--teal);
   border-color: rgba(14, 118, 135, 0.32);
@@ -227,11 +240,12 @@ a {
 }
 
 .site-header.home-overlay .nav-button {
-  color: #f0f2f3;
+  color: #ffffff;
   white-space: nowrap;
-  font-size: clamp(0.76rem, 0.78vw, 0.92rem);
-  letter-spacing: 0.16em;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  letter-spacing: 0.12em;
   font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .site-header.home-overlay:not(.at-top) .nav-button {
@@ -239,7 +253,8 @@ a {
 }
 
 .site-header.home-overlay .nav-button.active {
-  border-bottom-color: #f0f2f3;
+  border-bottom-color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .site-header.home-overlay:not(.at-top) .nav-button.active {
