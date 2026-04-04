@@ -4,7 +4,7 @@ import cpcHands from './assets/images/home/cpc-hands.jpg'
 import harleyStreet from './assets/images/home/harley-street.jpg'
 import londonView1 from './assets/images/home/london-view1.jpg'
 import londonView2 from './assets/images/home/london-view2.jpg'
-import londonView3 from './assets/images/home/london-view3.jpg'
+import londonView4 from './assets/images/home/london-view4.jpg'
 import sevenLionYard from './assets/images/home/seven-lion-yard-2.webp'
 import tpdLogo from './assets/images/affiliations/turkish-psychological-association.png'
 import bpsLogo from './assets/images/affiliations/british-psychological-society.png'
@@ -81,7 +81,7 @@ const stockImages = {
   therapyShowcase: sectionPsychologySessionMart,
 }
 
-const homeCarouselImages = [londonView1, londonView2, londonView3, cpcHands, harleyStreet, sevenLionYard]
+const homeCarouselImages = [londonView1, londonView2, londonView4, cpcHands, harleyStreet, sevenLionYard]
 
 const seoByPath = {
   '/': {
