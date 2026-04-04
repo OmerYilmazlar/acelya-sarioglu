@@ -1203,16 +1203,12 @@ a {
 
 .platform-feature-media {
   min-height: 300px;
-  background: #f4f7f8;
-  display: grid;
-  place-items: center;
 }
 
 .platform-feature-media img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  padding: clamp(12px, 2vw, 24px);
+  object-fit: cover;
   display: block;
 }
 
