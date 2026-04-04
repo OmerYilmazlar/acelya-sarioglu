@@ -531,11 +531,16 @@ a {
 }
 
 .card-grid.card-grid-three .card {
-  min-height: 430px;
+  min-height: 360px;
 }
 
-.card-grid.card-grid-three .card.expanded {
-  min-height: 860px;
+.card-grid.card-grid-three.has-expanded {
+  align-items: stretch;
+}
+
+.card-grid.card-grid-three.has-expanded .card {
+  min-height: 0;
+  height: 100%;
 }
 
 .card h3 {
