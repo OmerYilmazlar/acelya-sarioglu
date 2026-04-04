@@ -85,46 +85,46 @@ const homeCarouselImages = [londonBest, london1, london2, cpcHands, harleyStreet
 
 const seoByPath = {
   '/': {
-    title: 'Uzman Klinik Psikolog Açelya Sarıoğlu | Ana Sayfa',
+    title: 'Açelya Sarıoğlu - Klinik Psikolog | Terapi Hizmetleri',
     description:
-      'Yetişkin, çocuk ve ergen psikoterapi ile otizm ve DEHB değerlendirme hizmetleri. London merkezli yüz yüze ve online danışmanlık.',
+      'Açelya Sarıoğlu - Klinik Psikolog. Yetişkin, çocuk-ergen psikoterapi, otizm ve DEHB değerlendirme. London merkezli profesyonel terapi, yüz yüze ve online danışmanlık hizmetleri.',
     keywords:
-      'psikolog, klinik psikolog, psikoloji, danışmanlık, terapi, Açelya Sarıoğlu, yetişkin terapisi, çocuk ergen terapisi, online terapi',
+      'açelya sarıoğlu, psikolog london, klinik psikolog, psikoterapi, yetişkin terapisi, çocuk terapisi, ergen terapisi, otizm değerlendirme, dehb tanısı, online terapi',
   },
   '/yetiskin': {
     title: 'Yetişkin Psikoterapi | Açelya Sarıoğlu',
     description:
-      'Yetişkin psikoterapi sürecinde kaygı, panik atak, depresyon, obsesif belirtiler ve ilişki zorlukları için kişiye özel destek.',
+      'Yetişkin psikoterapi hizmetleri: kaygı, panik atak, depresyon, obsesif düşünceler, ilişki sorunları, travma ve stres yönetimi için kişiye özel terapi. Professional clinical psychologist Açelya Sarıoğlu tarafından.',
     keywords:
-      'yetişkin psikolog, yetişkin terapisi, kaygı terapisi, panik atak psikoloğu, depresyon terapisi, online psikolog türkiye, türk psikolog londra',
+      'yetişkin psikolog, yetişkin psikoterapi, kaygı terapisi, panik atak, depresyon tedavisi, travma terapisi, london psikolog, online terapi uk',
   },
   '/cocuk-ergen': {
     title: 'Çocuk ve Ergen Psikoterapi | Açelya Sarıoğlu',
     description:
-      'Çocuk ve ergenler için güvenli terapi alanı: duygusal zorluklar, okul uyumu, davranış sorunları, dikkat geliştirme çalışmaları ve ebeveyn danışmanlığı.',
+      'Çocuk ve ergen psikoterapi: duygusal sorunlar, davranış zorlukları, okul uyumu, duygu düzenleme, attentioner dikkat programı, ebeveyn danışmanlığı. Ankara ve London\'da hizmet.',
     keywords:
-      'çocuk psikoloğu, ergen psikoloğu, çocuk terapisi, ergen terapisi, ebeveyn danışmanlığı, oyun terapisi, dikkat geliştirme, attentioner, türk psikolog uk',
+      'çocuk psikolog, ergen psikolog, çocuk psikoterapi, ergen psikoterapi, oyun terapisi, davranış terapisi, attentioner dikkat programı, ebeveyn rehberliği, london çocuk psikolog',
   },
   '/terapi': {
-    title: 'Terapi ve Tedavi Yaklaşımları | Açelya Sarıoğlu',
+    title: 'Terapi Yöntemleri | Açelya Sarıoğlu',
     description:
-      'Bilişsel Davranışçı Terapi, Şema Terapi, Oyun Terapisi ve Mindfulness odaklı, danışana özel yapılandırılmış terapi süreçleri.',
+      'Bilişsel Davranışçı Terapi (CBT), Şema Terapi, Oyun Terapisi, Mindfulness ve modern terapi yaklaşımları. Kanıta dayalı tedavi yöntemleri danışana özel uyarlanır.',
     keywords:
-      'terapi yöntemleri, bilişsel davranışçı terapi, şema terapi, mindfulness terapi, online terapi türkiye, türkçe terapi londra',
+      'terapi yöntemleri, cbt terapi, şema terapi, mindfulness terapi, oyun terapisi, davranış değiştirme, psikolojik tedavi, london terapi merkezleri',
   },
   '/otizm-dehb': {
     title: 'Otizm ve DEHB Değerlendirme | Açelya Sarıoğlu',
     description:
-      'Otizm ve DEHB için kapsamlı tarama, değerlendirme, raporlama, Attentioner destekli dikkat geliştirme, psiko-eğitim ve bireye özel yönlendirme hizmetleri.',
+      'Otizm Spektrum Bozukluğu (ASD) ve DEHB kapsamlı değerlendirmesi, tanısı, attentioner dikkat programı, psiko-eğitim ve eğitim yönlendirmesi. Altın standart değerlendirme araçları kullanılır.',
     keywords:
-      'otizm değerlendirme, dehb değerlendirme, dikkat eksikliği, hiperaktivite bozukluğu, nörogelişimsel değerlendirme, attentioner, dikkatimi topluyorum programı, otizm danışmanlık',
+      'otizm değerlendirmesi, dehb tanısı, dikkat eksikliği hiperaktivite, nörogelişimsel değerlendirme, attentioner program, otizm spektrumu, london otizm değerlendirmesi',
   },
   '/iletisim': {
-    title: 'İletişim | Açelya Sarıoğlu',
+    title: 'İletişim | Açelya Sarıoğlu - Klinik Psikolog',
     description:
-      'Terapi, otizm ve DEHB danışmanlığı için iletişime geçin. London adresi, telefon ve e-posta bilgileri ile başvuru formu.',
+      'Açelya Sarıoğlu ile iletişime geçin. Terapi randevusu, otizm-DEHB değerlendirmesi danışmanlığı. London adresi, telefon, WhatsApp ve randevu formu.',
     keywords:
-      'psikolog iletişim, açelya sarıoğlu iletişim, psikolojik danışmanlık randevu, online terapi randevu',
+      'psikolog randevu, açelya sarıoğlu randevu, london psikolog iletişim, online terapi randevu, psikolojik danışmanlık',
   },
 }
 
