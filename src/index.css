@@ -513,7 +513,7 @@ a {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .card-grid.card-grid-three {
@@ -527,7 +527,15 @@ a {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
+}
+
+.card-grid.card-grid-three .card {
+  min-height: 520px;
+}
+
+.card-grid.card-grid-three .card.expanded {
+  min-height: initial;
 }
 
 .card h3 {
