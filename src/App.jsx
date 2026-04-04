@@ -712,6 +712,7 @@ function CardGrid({ title, items }) {
             <p className="card-summary">{item.text}</p>
             {item.readMoreText ? (
               <>
+                {expandedCards[item.title] ? <p className="card-read-more-text">{item.readMoreText}</p> : null}
                 <button
                   type="button"
                   className="card-read-more-btn"
@@ -720,7 +721,6 @@ function CardGrid({ title, items }) {
                 >
                   {expandedCards[item.title] ? 'Daha Az Göster' : 'Devamını Oku'}
                 </button>
-                {expandedCards[item.title] ? <p className="card-read-more-text">{item.readMoreText}</p> : null}
               </>
             ) : null}
           </article>
