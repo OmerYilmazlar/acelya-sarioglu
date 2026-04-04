@@ -57,10 +57,10 @@ a {
 }
 
 .site-header.home-overlay.at-top {
-  position: sticky;
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(8px);
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 0;
+  backdrop-filter: none;
 }
 
 .site-header.home-overlay:not(.at-top) {
@@ -223,13 +223,15 @@ a {
 }
 
 .site-header.home-overlay.at-top .header-social .social-link {
-  color: var(--teal);
-  border-color: rgba(14, 118, 135, 0.32);
-  background: #ffffff;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 0.65rem;
+  backdrop-filter: blur(4px);
 }
 
 .site-header.home-overlay.at-top .header-social .social-link:hover {
-  background: #f5fbfc;
+  background: rgba(255, 255, 255, 0.18);
 }
 
 .site-header.home-overlay:not(.at-top) .header-social .social-link {
@@ -256,9 +258,8 @@ a {
 }
 
 .site-header.home-overlay.at-top .nav-button {
-  color: var(--teal);
-  text-shadow: none;
-  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .site-header.home-overlay .nav-button.active {
@@ -267,7 +268,7 @@ a {
 }
 
 .site-header.home-overlay.at-top .nav-button.active {
-  border-bottom-color: var(--teal);
+  border-bottom-color: #ffffff;
 }
 
 .site-header.home-overlay:not(.at-top) .nav-button.active {
