@@ -403,17 +403,16 @@ a {
 
 .hero.home-clinic .hero-content h1 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: clamp(2.85rem, 6.3vw, 5.6rem);
+  font-size: clamp(1.65rem, 3vw, 2.7rem);
   max-width: 900px;
-  line-height: 0.96;
+  line-height: 1.05;
   font-weight: 500;
   letter-spacing: 0;
   margin-bottom: 18px;
 }
 
 .hero.home-clinic .hero-content p {
-  font-size: 0.74rem;
-  font-size: clamp(2rem, 4.4vw, 3.85rem);
+  font-size: clamp(0.75rem, 1.2vw, 0.98rem);
   font-weight: 700;
   margin-bottom: 12px;
 }
