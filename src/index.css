@@ -548,6 +548,19 @@ a {
   flex-grow: 1;
 }
 
+.card-summary-expandable {
+  white-space: pre-line;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+}
+
+.card-summary-expandable.expanded {
+  display: block;
+  overflow: visible;
+}
+
 .card-read-more-btn {
   margin-top: auto;
   border: 1px solid rgba(19, 105, 117, 0.55);
@@ -564,13 +577,6 @@ a {
 
 .card-read-more-btn:hover {
   background: rgba(21, 123, 139, 0.22);
-}
-
-.card-read-more-text {
-  margin-top: 14px;
-  font-size: 0.97rem;
-  line-height: 1.72;
-  white-space: pre-line;
 }
 
 .child-focus-list {

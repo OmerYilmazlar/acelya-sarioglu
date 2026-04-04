@@ -706,25 +706,30 @@ function CardGrid({ title, items }) {
         <h2>{title}</h2>
       </div>
       <div className={`card-grid ${items.length === 3 ? 'card-grid-three' : ''}`}>
-        {items.map((item) => (
-          <article key={item.title} className="card">
-            <h3>{item.title}</h3>
-            <p className="card-summary">{item.text}</p>
-            {item.readMoreText ? (
-              <>
-                {expandedCards[item.title] ? <p className="card-read-more-text">{item.readMoreText}</p> : null}
+        {items.map((item) => {
+          const isExpandable = Boolean(item.readMoreText)
+          const isExpanded = Boolean(expandedCards[item.title])
+          const bodyText = isExpandable ? item.readMoreText : item.text
+
+          return (
+            <article key={item.title} className="card">
+              <h3>{item.title}</h3>
+              <p className={`card-summary ${isExpandable ? 'card-summary-expandable' : ''} ${isExpanded ? 'expanded' : ''}`}>
+                {bodyText}
+              </p>
+              {isExpandable ? (
                 <button
                   type="button"
                   className="card-read-more-btn"
                   onClick={() => toggleExpandedCard(item.title)}
-                  aria-expanded={Boolean(expandedCards[item.title])}
+                  aria-expanded={isExpanded}
                 >
-                  {expandedCards[item.title] ? 'Daha Az Göster' : 'Devamını Oku'}
+                  {isExpanded ? 'Daha Az Göster' : 'Devamını Oku'}
                 </button>
-              </>
-            ) : null}
-          </article>
-        ))}
+              ) : null}
+            </article>
+          )
+        })}
       </div>
     </section>
   )
@@ -1315,7 +1320,7 @@ function OtizmPage() {
             'Nörogelişimsel Değerlendirme ve Raporlama\nAltın standart araçlarla kapsamlı inceleme ve detaylı rapor\nNörogelişimsel değerlendirme, çocuğunuzun gelişimsel, bilişsel ve davranışsal profilini ayrıntılı şekilde anlamaya yönelik kapsamlı bir süreçtir. Bu süreç, Otizm Spektrum Durumu (OSD) veya Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) açısından daha derinlemesine bir analiz sağlar ve genellikle 6-8 hafta süren kapsamlı bir rapor ile tamamlanır.\nDeğerlendirme süreci şunları içerir:\n- Ayrıntılı klinik görüşme ve gelişimsel öykü\n- Aile ve eğitimcilerden çoklu bilgi kaynakları\n- Altın standart değerlendirme araçlarının uygulanması, örn. ADOS-2\n- Bilişsel, sosyal, duygusal ve yürütücü işlevlerin kapsamlı ölçümü\nDeğerlendirme sonunda, çocuğunuzun güçlü yanları, destek gereksinimleri ve olası müdahale alanları detaylı bir rapor ile sunulur. Tüm çalışmalar, Birleşik Krallık klinik standartları ve NICE rehberleri doğrultusunda yürütülmektedir.',
         },
         {
-          title: 'Dikkat Geliştirme ve Attentioner',
+          title: 'Attentioner – Dikkatimi Topluyorum',
           text: 'DEHB alanında, 7-18 yaş arası çocuklarla bilimsel temelli Attentioner – Dikkatimi Topluyorum Programı ile dikkat geliştirme çalışmaları yürütüyorum.',
           readMoreText:
             'Attentioner - Dikkatimi Topluyorum Programı: Almanya Bremen Üniversitesi\'nde nöropsikolojik temelli olarak geliştirilmiştir.\nDikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) tanısı almış veya dikkatle ilgili güçlükler yaşayan çocuklar için tasarlanmış bir bireysel ve grup eğitim programıdır. Program, 7-18 yaş bireylerin dikkat ve yürütücü işlevlerini etkili bir biçimde geliştirmeyi hedefler.\nProgram, iki temel ilkeye dayanır:\n- Öğrenme Psikolojisi\n- Nöropsikolojik Temeller\nDikkatimi Topluyorum\'un bütün oturumlarında, kolaydan zora doğru uyaranlar, şifreler ve etkinliklerle çocuğun:\n- Seçici Dikkat\n- Bölünmüş Dikkat\n- Odaklanma\n- Zamanlama\nişlevleri etkili biçimde iyileştirilir. Program, çocukluk çağına uygun eğlenceli elementlerle desteklenmiştir',
