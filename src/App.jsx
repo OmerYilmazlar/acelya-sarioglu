@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import cpcHands from './assets/images/home/cpc-hands.jpg'
 import harleyStreet from './assets/images/home/harley-street.jpg'
-import london4 from './assets/images/home/london4.jpg'
+import londonBest from './assets/images/home/london-best.jpeg'
 import sevenLionYard from './assets/images/home/seven-lion-yard-2.webp'
 import tpdLogo from './assets/images/affiliations/turkish-psychological-association.png'
 import bpsLogo from './assets/images/affiliations/british-psychological-society.png'
@@ -79,7 +79,7 @@ const stockImages = {
   therapyShowcase: sectionPsychologySessionMart,
 }
 
-const homeCarouselImages = [london4]
+const homeCarouselImages = [londonBest]
 
 const seoByPath = {
   '/': {
