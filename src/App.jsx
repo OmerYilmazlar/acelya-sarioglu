@@ -171,18 +171,6 @@ const profilePlatforms = [
     ],
   },
   {
-    name: 'Psychology Today',
-    href: 'https://www.psychologytoday.com/gb/counselling/acelya-sarioglu-london/1438632',
-    image: platformPsychologyToday,
-    summary:
-      'Yetişkin ve ergenlerle Türkçe/İngilizce terapi; çocuk, ergen ve yetişkinler için yüz yüze ve online destek.',
-    highlights: [
-      'BPS ve Türk Psikologlar Derneği kayıtlı psikolog',
-      'CBT, Şema Terapi, Mindfulness, Çözüm Odaklı Terapi, Oyun Terapisi',
-      'Kaygı, OCD, panik atak, travma, sosyal anksiyete, fobiler, depresyon',
-    ],
-  },
-  {
     name: 'Complicated Life',
     href: 'https://complicated.life/find-a-therapist/london/counsellor-acelya-sarioglu',
     image: platformItsComplicated,
@@ -192,6 +180,18 @@ const profilePlatforms = [
       'Uzmanlıklar: anksiyete, OCD, panik atak, PTSD, sosyal anksiyete, öfke, depresyon',
       'Diller: Türkçe, İngilizce',
       'Konum: London, United Kingdom',
+    ],
+  },
+  {
+    name: 'Psychology Today',
+    href: 'https://www.psychologytoday.com/gb/counselling/acelya-sarioglu-london/1438632',
+    image: platformPsychologyToday,
+    summary:
+      'Yetişkin ve ergenlerle Türkçe/İngilizce terapi; çocuk, ergen ve yetişkinler için yüz yüze ve online destek.',
+    highlights: [
+      'BPS ve Türk Psikologlar Derneği kayıtlı psikolog',
+      'CBT, Şema Terapi, Mindfulness, Çözüm Odaklı Terapi, Oyun Terapisi',
+      'Kaygı, OCD, panik atak, travma, sosyal anksiyete, fobiler, depresyon',
     ],
   },
   {

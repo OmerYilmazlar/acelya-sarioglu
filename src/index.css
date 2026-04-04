@@ -1138,12 +1138,12 @@ a {
 
 .platform-feature {
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
+  grid-template-columns: 0.65fr 1.35fr;
   align-items: stretch;
 }
 
 .platform-feature.reverse {
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: 1.35fr 0.65fr;
 }
 
 .platform-feature.reverse .platform-feature-media {
@@ -1155,11 +1155,11 @@ a {
 }
 
 .platform-feature.compact .platform-feature-media {
-  min-height: 280px;
+  min-height: 240px;
 }
 
 .platform-feature-media {
-  min-height: 350px;
+  min-height: 300px;
 }
 
 .platform-feature-media img {
@@ -1170,7 +1170,7 @@ a {
 }
 
 .platform-feature-content {
-  background: #157b8b;
+  background: linear-gradient(135deg, #0f6b7d 0%, #157b8b 50%, #1a8fa5 100%);
   color: #eef4f5;
   padding: clamp(26px, 4vw, 56px);
   display: grid;
