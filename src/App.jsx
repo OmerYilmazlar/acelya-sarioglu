@@ -707,11 +707,11 @@ function CardGrid({ title, items }) {
       <div className="section-head">
         <h2>{title}</h2>
       </div>
-      <div className="card-grid">
+      <div className={`card-grid ${items.length === 3 ? 'card-grid-three' : ''}`}>
         {items.map((item) => (
           <article key={item.title} className="card">
             <h3>{item.title}</h3>
-            <p>{item.text}</p>
+            <p className="card-summary">{item.text}</p>
             {item.readMoreText ? (
               <>
                 <button

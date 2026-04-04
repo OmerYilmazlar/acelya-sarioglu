@@ -516,11 +516,22 @@ a {
   gap: 18px;
 }
 
+.card-grid.card-grid-three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
 .card {
   background: var(--white);
   border: 1px solid var(--line);
   padding: 22px;
-  min-height: 210px;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-grid.card-grid-three .card {
+  min-height: 300px;
 }
 
 .card h3 {
@@ -534,8 +545,12 @@ a {
   line-height: 1.6;
 }
 
+.card-summary {
+  flex-grow: 1;
+}
+
 .card-read-more-btn {
-  margin-top: 14px;
+  margin-top: auto;
   border: 1px solid rgba(19, 105, 117, 0.55);
   background: rgba(21, 123, 139, 0.1);
   color: var(--teal);
