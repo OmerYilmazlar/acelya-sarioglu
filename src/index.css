@@ -534,6 +534,31 @@ a {
   line-height: 1.6;
 }
 
+.card-read-more-btn {
+  margin-top: 14px;
+  border: 1px solid rgba(19, 105, 117, 0.55);
+  background: rgba(21, 123, 139, 0.1);
+  color: var(--teal);
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.card-read-more-btn:hover {
+  background: rgba(21, 123, 139, 0.22);
+}
+
+.card-read-more-text {
+  margin-top: 14px;
+  font-size: 0.97rem;
+  line-height: 1.72;
+  white-space: pre-line;
+}
+
 .child-focus-list {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
