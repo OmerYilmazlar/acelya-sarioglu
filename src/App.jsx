@@ -161,48 +161,37 @@ const profilePlatforms = [
     name: 'LinkedIn',
     href: 'https://uk.linkedin.com/in/a%C3%A7elya-sar%C4%B1o%C4%9Flu-362128152',
     image: platformLinkedin,
-    summary: 'Profesyonel ağ profili ve kariyer görünürlüğü.',
-    highlights: [
-      'Profesyonel ağ ve akademik geçmiş',
-      'Klinik psikoloji uzmanlığı odaklı profil',
-      'Londra merkezli çalışma geçmişi',
-    ],
+    summary:
+      'LinkedIn profilimde akademik yolculuğumu, Londra odaklı çalışma geçmişimi ve klinik psikoloji alanındaki profesyonel gelişimimi bir arada paylaşıyorum.',
+    story:
+      'Burada eğitim adımlarımı, uzmanlaştığım alanları ve yıllar içinde üstlendiğim görevleri şeffaf biçimde anlatıyorum. Danışanlarımla kurduğum etik ve güvene dayalı yaklaşımın profesyonel arka planını görmek isteyen herkes için bu profil benim dijital özgeçmişim niteliğinde.',
   },
   {
     name: 'Complicated Life',
     href: 'https://complicated.life/find-a-therapist/london/counsellor-acelya-sarioglu',
     image: platformItsComplicated,
     summary:
-      'Yeni danışanlara açık profil: çocuk, ergen, yetişkin ve ailelerle çalışma; Türkiye ve Birleşik Krallık odaklı online/yüz yüze hizmet.',
-    highlights: [
-      'Uzmanlıklar: anksiyete, OCD, panik atak, PTSD, sosyal anksiyete, öfke, depresyon',
-      'Diller: Türkçe, İngilizce',
-      'Konum: London, United Kingdom',
-    ],
+      'Complicated Life profilimde, çocuklardan yetişkinlere kadar farklı yaş gruplarıyla nasıl çalıştığımı ve terapi yaklaşımımı sade bir dille paylaşıyorum.',
+    story:
+      'Bu platformda yeni danışanlara açık olduğum dönemleri, Türkçe ve İngilizce seans seçeneklerini ve hem online hem yüz yüze desteği nasıl planladığımı anlatıyorum. Anksiyete, panik atak, travma ve ilişki zorlukları gibi sık karşılaşılan konularda birlikte nasıl bir yol haritası çizdiğimizi burada net bir şekilde görebilirsiniz.',
   },
   {
     name: 'Psychology Today',
     href: 'https://www.psychologytoday.com/gb/counselling/acelya-sarioglu-london/1438632',
     image: platformPsychologyToday,
     summary:
-      'Yetişkin ve ergenlerle Türkçe/İngilizce terapi; çocuk, ergen ve yetişkinler için yüz yüze ve online destek.',
-    highlights: [
-      'BPS ve Türk Psikologlar Derneği kayıtlı psikolog',
-      'CBT, Şema Terapi, Mindfulness, Çözüm Odaklı Terapi, Oyun Terapisi',
-      'Kaygı, OCD, panik atak, travma, sosyal anksiyete, fobiler, depresyon',
-    ],
+      'Psychology Today profilimde, danışanlarımla çalışırken kullandığım kanıta dayalı terapi yöntemlerini ve uzmanlık çerçevemi detaylı olarak paylaşıyorum.',
+    story:
+      'CBT, Şema Terapi, Mindfulness ve Oyun Terapisi gibi yöntemleri danışanın ihtiyacına göre nasıl birleştirdiğimi bu sayfada anlatıyorum. BPS ve Türk Psikologlar Derneği üyeliğimle desteklenen profesyonel yaklaşımımı, kaygıdan travmaya uzanan farklı başlıklarda nasıl uyguladığımı görmek için bu profil en kapsamlı kaynaklardan biri.',
   },
   {
     name: 'MHW Clinic',
     href: 'https://mhwclinic.co.uk/acelya-sarioglu/',
     image: platformMhwClinic,
     summary:
-      'My Health and Wellbeing Clinic uzman profili: çocuk, ergen ve yetişkin psikolojisinde kapsamlı terapi, değerlendirme ve danışmanlık.',
-    highlights: [
-      'Uzmanlık alanları: Adult Psychotherapy, Child/Adolescent Psychotherapy, Autism & ADHD Assessment',
-      'Kanıta dayalı yaklaşım: CBT, Şema Terapi, Mindfulness, Çözüm Odaklı Terapi, Oyun Terapisi',
-      'Ebeveyn ve okul destek danışmanlığı dahil bütüncül bakım modeli',
-    ],
+      'MHW Clinic profilimde, klinik ekip içindeki rolümü ve çocuk, ergen, yetişkin danışanlarla yürüttüğüm bütüncül terapi modelini paylaşıyorum.',
+    story:
+      'Bu sayfada psikoterapiye ek olarak otizm ve DEHB değerlendirme süreçlerini, ebeveyn ve okul iş birliğini nasıl yapılandırdığımı adım adım anlatıyorum. Hedefim yalnızca semptomları azaltmak değil; danışanın günlük yaşamına, aile sistemine ve gelişim yolculuğuna sürdürülebilir bir destek planı kurmak.',
   },
 ]
 
@@ -849,11 +838,7 @@ function PlatformReferencesSection() {
               <div className="platform-feature-frame">
                 <h3>{platform.name}</h3>
                 <p>{platform.summary}</p>
-                <ul>
-                  {platform.highlights.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <p>{platform.story}</p>
                 <a href={platform.href} target="_blank" rel="noreferrer" className="platform-link-btn">
                   Profili Gör
                 </a>

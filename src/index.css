@@ -1247,6 +1247,10 @@ a {
   font-size: 1.08rem;
 }
 
+.platform-feature-frame p + p {
+  margin-top: 14px;
+}
+
 .platform-feature-frame ul {
   margin: 14px 0 0;
   padding-left: 22px;
@@ -1260,8 +1264,9 @@ a {
 }
 
 .platform-link-btn {
-  margin-top: 18px;
-  display: inline-block;
+  margin: 22px auto 0;
+  display: block;
+  width: fit-content;
   border: 1px solid rgba(197, 171, 124, 0.9);
   color: #d7be95;
   padding: 10px 16px;
@@ -1269,6 +1274,7 @@ a {
   letter-spacing: 0.14em;
   font-size: 0.72rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .instagram-events-showcase {
