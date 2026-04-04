@@ -1167,6 +1167,14 @@ a {
 
 .platform-references {
   margin: 62px auto 26px;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(24px, 3vw, 36px);
+  background:
+    radial-gradient(circle at 14% 20%, rgba(21, 123, 139, 0.14) 0 2px, transparent 3px) 0 0 / 24px 24px,
+    radial-gradient(circle at 84% 76%, rgba(21, 123, 139, 0.1) 0 2px, transparent 3px) 0 0 / 30px 30px,
+    linear-gradient(165deg, #edf3f4 0%, #e5eef0 56%, #dde9eb 100%);
+  border: 1px solid rgba(93, 116, 123, 0.18);
 }
 
 .platform-subtitle {
