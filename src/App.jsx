@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import cpcHands from './assets/images/home/cpc-hands.jpg'
 import harleyStreet from './assets/images/home/harley-street.jpg'
+import london1 from './assets/images/home/london1.jpeg'
+import london2 from './assets/images/home/london2.jpeg'
 import londonBest from './assets/images/home/london-best.jpeg'
 import sevenLionYard from './assets/images/home/seven-lion-yard-2.webp'
 import tpdLogo from './assets/images/affiliations/turkish-psychological-association.png'
@@ -79,7 +81,7 @@ const stockImages = {
   therapyShowcase: sectionPsychologySessionMart,
 }
 
-const homeCarouselImages = [londonBest, cpcHands, harleyStreet, sevenLionYard]
+const homeCarouselImages = [londonBest, london1, london2, cpcHands, harleyStreet, sevenLionYard]
 
 const seoByPath = {
   '/': {
