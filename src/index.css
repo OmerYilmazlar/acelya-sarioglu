@@ -1166,6 +1166,7 @@ a {
 }
 
 .platform-references {
+  width: min(1500px, 100%);
   margin: 62px auto 26px;
   position: relative;
   overflow: hidden;
@@ -1189,12 +1190,12 @@ a {
 
 .platform-feature {
   display: grid;
-  grid-template-columns: 0.65fr 1.35fr;
+  grid-template-columns: 0.9fr 1.1fr;
   align-items: stretch;
 }
 
 .platform-feature.reverse {
-  grid-template-columns: 1.35fr 0.65fr;
+  grid-template-columns: 1.1fr 0.9fr;
 }
 
 .platform-feature.reverse .platform-feature-media {
