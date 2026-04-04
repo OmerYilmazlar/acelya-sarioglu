@@ -1158,7 +1158,7 @@ function PageTemplate({ title, subtitle, image, introTitle, introText, cardsTitl
         <div className="section-head">
           <h2>{introTitle}</h2>
         </div>
-        <p>{introText}</p>
+        <p className="intro-text-large">{introText}</p>
       </section>
       {cardsSection || <CardGrid title={cardsTitle} items={cards} />}
       <SplitSection title={splitA.title} text={splitA.text} image={splitA.image} />
@@ -1284,7 +1284,6 @@ function OtizmPage() {
       cards={[
         { title: 'Otizm ve DEHB Taraması', text: 'Otizm, DEHB taraması, değerlendirmesi ve danışmanlığı hizmeti vermekteyim.' },
         { title: 'Nörogelişimsel Değerlendirme', text: 'Otizm, Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) dahil olmak üzere nörogelişimsel bozuklukların değerlendirilmesi ve yönetimi konusunda uzmanım.' },
-        { title: 'Bakım Paketi ve Raporlama', text: 'Altın standart değerlendirme araçlarını kullanarak kapsamlı nörogelişimsel tarama ve değerlendirme hizmetleri sunuyorum. Değerlendirme sonrasında, bireyin ihtiyaçlarına özel olarak hazırlanmış bir bakım paketi sunuyorum.' },
         { title: 'Dikkat Geliştirme ve Attentioner', text: 'DEHB alanında, 7-18 yaş arası çocuklarla bilimsel temelli Attentioner – Dikkatimi Topluyorum Programı ile dikkat geliştirme çalışmaları yürütüyorum.' },
       ]}
       splitA={{

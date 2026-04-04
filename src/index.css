@@ -503,6 +503,13 @@ a {
   color: var(--teal);
 }
 
+.intro-text-large {
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  line-height: 1.85;
+  margin: 0 0 24px 0;
+  color: var(--dark-text);
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
