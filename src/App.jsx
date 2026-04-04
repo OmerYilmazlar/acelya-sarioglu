@@ -1280,7 +1280,6 @@ function OtizmPage() {
         { title: 'Nörogelişimsel Değerlendirme', text: 'Otizm, Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) dahil olmak üzere nörogelişimsel bozuklukların değerlendirilmesi ve yönetimi konusunda uzmanım.' },
         { title: 'Bakım Paketi ve Raporlama', text: 'Altın standart değerlendirme araçlarını kullanarak kapsamlı nörogelişimsel tarama ve değerlendirme hizmetleri sunuyorum. Değerlendirme sonrasında, bireyin ihtiyaçlarına özel olarak hazırlanmış bir bakım paketi sunuyorum.' },
         { title: 'Dikkat Geliştirme ve Attentioner', text: 'DEHB alanında, 7-18 yaş arası çocuklarla bilimsel temelli Attentioner – Dikkatimi Topluyorum Programı ile dikkat geliştirme çalışmaları yürütüyorum.' },
-        { title: 'Ek Ruh Sağlığı Desteği', text: 'Değerlendirme veya danışmanlık sürecinde, kaygı bozuklukları, depresif ruh hali ve obsesif davranışlar gibi diğer ruh sağlığı sorunları da ortaya çıkabilir. Bu tür zorluklar için de gerekli tedavi ve destek sunmaktayım.' },
       ]}
       splitA={{
         title: 'Kapsamlı Nörogelişimsel Değerlendirme',
