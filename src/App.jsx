@@ -131,7 +131,7 @@ const siteUrl = 'https://acelyasarioglu.com'
 const toAbsoluteUrl = (value) => (value.startsWith('http') ? value : `${siteUrl}${value}`)
 
 const CONTACT_EMAIL = 'acelyasarioglu9@gmail.com'
-const CONTACT_DISPLAY_EMAIL = 'acelyasarioglu9@gmail.com'
+const CONTACT_DISPLAY_EMAIL = 'psikolog@acelyasarioglu.com'
 const CONTACT_PHONE_TR = '+905536121546'
 const CONTACT_PHONE_UK = '+447541434812'
 const WHATSAPP_LINK = 'https://wa.me/905536121546'
@@ -1309,6 +1309,7 @@ function IletisimPage() {
           <h2>İletişim Bilgileri</h2>
           <p>Terapi, Otizm ve DEHB Uzman Danışmanlığı ve Tanı servisleri için bugün iletişime geçebilirsiniz.</p>
           <p>Adres: 97-99 Whitechapel Rd, London E1 1DT</p>
+          <p>Adres 2: N14, Barnet, London</p>
           <p>
             Telefon: <a className="contact-link" href={`tel:${CONTACT_PHONE_TR}`}>+905536121546</a> (Türkiye), <a className="contact-link" href={`tel:${CONTACT_PHONE_UK}`}>+447541434812</a> (Birleşik Krallık)
           </p>
