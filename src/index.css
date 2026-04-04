@@ -513,7 +513,7 @@ a {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .card-grid.card-grid-three {
@@ -527,6 +527,7 @@ a {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .card h3 {
@@ -545,7 +546,7 @@ a {
 }
 
 .card-read-more-btn {
-  margin-top: 12px;
+  margin-top: auto;
   border: 1px solid rgba(19, 105, 117, 0.55);
   background: rgba(21, 123, 139, 0.1);
   color: var(--teal);

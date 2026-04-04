@@ -162,7 +162,7 @@ const profilePlatforms = [
     href: 'https://uk.linkedin.com/in/a%C3%A7elya-sar%C4%B1o%C4%9Flu-362128152',
     image: platformLinkedin,
     summary:
-      'LinkedIn profilimde akademik yolculuğumu, Londra odaklı çalışma geçmişimi ve klinik psikoloji alanındaki profesyonel gelişimimi bir arada paylaşıyorum.',
+      'LinkedIn sayfam, mesleki yolculuğumun resmi özeti gibi; eğitim geçmişimi, klinik deneyimlerimi ve Londra\'daki profesyonel adımlarımı burada net biçimde görebilirsiniz.',
     story:
       'Burada eğitim adımlarımı, uzmanlaştığım alanları ve yıllar içinde üstlendiğim görevleri şeffaf biçimde anlatıyorum. Danışanlarımla kurduğum etik ve güvene dayalı yaklaşımın profesyonel arka planını görmek isteyen herkes için bu profil benim dijital özgeçmişim niteliğinde.',
   },
@@ -171,7 +171,7 @@ const profilePlatforms = [
     href: 'https://complicated.life/find-a-therapist/london/counsellor-acelya-sarioglu',
     image: platformItsComplicated,
     summary:
-      'Complicated Life profilimde, çocuklardan yetişkinlere kadar farklı yaş gruplarıyla nasıl çalıştığımı ve terapi yaklaşımımı sade bir dille paylaşıyorum.',
+      'Complicated Life profili, benimle çalışmayı düşünen danışanların terapi sürecini daha yakından hissetmesi için hazırladığım samimi bir tanıtım alanı.',
     story:
       'Bu platformda yeni danışanlara açık olduğum dönemleri, Türkçe ve İngilizce seans seçeneklerini ve hem online hem yüz yüze desteği nasıl planladığımı anlatıyorum. Anksiyete, panik atak, travma ve ilişki zorlukları gibi sık karşılaşılan konularda birlikte nasıl bir yol haritası çizdiğimizi burada net bir şekilde görebilirsiniz.',
   },
@@ -180,7 +180,7 @@ const profilePlatforms = [
     href: 'https://www.psychologytoday.com/gb/counselling/acelya-sarioglu-london/1438632',
     image: platformPsychologyToday,
     summary:
-      'Psychology Today profilimde, danışanlarımla çalışırken kullandığım kanıta dayalı terapi yöntemlerini ve uzmanlık çerçevemi detaylı olarak paylaşıyorum.',
+      'Psychology Today üzerinde, hangi terapi ekollerinden beslendiğimi ve bu yöntemleri farklı ihtiyaçlara göre nasıl uyarladığımı daha teknik bir çerçevede anlatıyorum.',
     story:
       'CBT, Şema Terapi, Mindfulness ve Oyun Terapisi gibi yöntemleri danışanın ihtiyacına göre nasıl birleştirdiğimi bu sayfada anlatıyorum. BPS ve Türk Psikologlar Derneği üyeliğimle desteklenen profesyonel yaklaşımımı, kaygıdan travmaya uzanan farklı başlıklarda nasıl uyguladığımı görmek için bu profil en kapsamlı kaynaklardan biri.',
   },
@@ -189,7 +189,7 @@ const profilePlatforms = [
     href: 'https://mhwclinic.co.uk/acelya-sarioglu/',
     image: platformMhwClinic,
     summary:
-      'MHW Clinic profilimde, klinik ekip içindeki rolümü ve çocuk, ergen, yetişkin danışanlarla yürüttüğüm bütüncül terapi modelini paylaşıyorum.',
+      'MHW Clinic sayfasında ise ekip içindeki aktif rolümü ve çocuk, ergen, yetişkin danışanlarla yürüttüğüm çok disiplinli çalışma modelini paylaşıyorum.',
     story:
       'Bu sayfada psikoterapiye ek olarak otizm ve DEHB değerlendirme süreçlerini, ebeveyn ve okul iş birliğini nasıl yapılandırdığımı adım adım anlatıyorum. Hedefim yalnızca semptomları azaltmak değil; danışanın günlük yaşamına, aile sistemine ve gelişim yolculuğuna sürdürülebilir bir destek planı kurmak.',
   },
