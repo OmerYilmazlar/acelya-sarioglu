@@ -738,38 +738,42 @@ function ChildFocusSection() {
   return (
     <section className="section child-focus-section" id="icerik">
       <div className="section-head">
-        <h2>Çocuk ve Ergen Çalışma Alanları</h2>
+        <h2>Çalışma Alanlarım</h2>
       </div>
-      <div className="child-focus-grid">
-        <article className="child-focus-column">
-          <h3>Çalışma Alanlarım</h3>
-          <div className="child-focus-card-list">
-            {workAreas.map((item) => (
-              <article key={item.title} className="child-focus-card">
-                <h4>{item.title}</h4>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-        </article>
+      <div className="child-focus-list">
+        {workAreas.map((item) => (
+          <article key={item.title} className="card child-focus-card">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
 
-        <article className="child-focus-column">
-          <h3>Kullandığım Yaklaşımlar</h3>
-          <div className="child-focus-card-list">
-            {methods.map((item) => (
-              <article key={item.title} className="child-focus-card">
-                <h4>{item.title}</h4>
-                <p>{item.text}</p>
-              </article>
-            ))}
-          </div>
-          <div className="child-focus-note">
-            <p>
-              Attentioner için detaylı bilgiye <Link to="/otizm-dehb">Otizm ve DEHB</Link> sayfasından ulaşabilirsiniz.
-            </p>
-          </div>
-        </article>
+      <div className="section-head child-focus-spacer">
+        <h2>Kullandığım Yaklaşımlar</h2>
       </div>
+      <div className="child-focus-list">
+        {methods.map((item) => (
+          <article key={item.title} className="card child-focus-card">
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+
+      <aside className="attentioner-callout">
+        <h3>Attentioner</h3>
+        <p>
+          Dikkat Eksikliği ve Hiperaktivite (DEHB) olan 7-18 yaş arası çocuklarla, bilimsel temelli Attentioner – Dikkatimi Topluyorum Programı ile çalışıyorum.
+        </p>
+        <p>
+          Bu program, dikkat sürdürme, dürtüsellik yönetimi ve günlük işlevselliği desteklemeye yardımcı olur. Detaylı bilgi için{' '}
+          <Link to="/otizm-dehb" className="attentioner-link">
+            Otizm ve DEHB sayfasını
+          </Link>
+          {' '}inceleyebilirsiniz.
+        </p>
+      </aside>
     </section>
   )
 }
