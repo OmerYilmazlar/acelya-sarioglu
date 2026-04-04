@@ -530,19 +530,6 @@ a {
   height: auto;
 }
 
-.card-grid.card-grid-three .card {
-  min-height: 360px;
-}
-
-.card-grid.card-grid-three.has-expanded {
-  align-items: stretch;
-}
-
-.card-grid.card-grid-three.has-expanded .card {
-  min-height: 0;
-  height: 100%;
-}
-
 .card h3 {
   color: var(--teal);
   font-size: 1.35rem;
@@ -559,7 +546,7 @@ a {
 }
 
 .card-read-more-btn {
-  margin-top: auto;
+  margin-top: 12px;
   border: 1px solid rgba(19, 105, 117, 0.55);
   background: rgba(21, 123, 139, 0.1);
   color: var(--teal);

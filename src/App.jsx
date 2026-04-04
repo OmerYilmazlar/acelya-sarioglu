@@ -681,7 +681,6 @@ function Hero({ title, subtitle, image, images, homeStyle = false, homeCtaLabel 
 
 function CardGrid({ title, items }) {
   const [expandedCards, setExpandedCards] = useState({})
-  const hasExpandedCard = Object.values(expandedCards).some(Boolean)
 
   const toggleExpandedCard = (title) => {
     setExpandedCards((prev) => ({
@@ -695,7 +694,7 @@ function CardGrid({ title, items }) {
       <div className="section-head">
         <h2>{title}</h2>
       </div>
-      <div className={`card-grid ${items.length === 3 ? 'card-grid-three' : ''} ${hasExpandedCard ? 'has-expanded' : ''}`}>
+      <div className={`card-grid ${items.length === 3 ? 'card-grid-three' : ''}`}>
         {items.map((item) => {
           const isExpandable = Boolean(item.readMoreText)
           const isExpanded = Boolean(expandedCards[item.title])
