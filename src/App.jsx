@@ -79,7 +79,7 @@ const stockImages = {
   therapyShowcase: sectionPsychologySessionMart,
 }
 
-const homeCarouselImages = [cpcHands, harleyStreet, london4, sevenLionYard]
+const homeCarouselImages = [london4]
 
 const seoByPath = {
   '/': {
