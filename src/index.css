@@ -1138,12 +1138,12 @@ a {
 
 .platform-feature {
   display: grid;
-  grid-template-columns: 1.08fr 0.92fr;
+  grid-template-columns: 0.75fr 1.25fr;
   align-items: stretch;
 }
 
 .platform-feature.reverse {
-  grid-template-columns: 0.92fr 1.08fr;
+  grid-template-columns: 1.25fr 0.75fr;
 }
 
 .platform-feature.reverse .platform-feature-media {
@@ -1155,11 +1155,11 @@ a {
 }
 
 .platform-feature.compact .platform-feature-media {
-  min-height: 360px;
+  min-height: 280px;
 }
 
 .platform-feature-media {
-  min-height: 430px;
+  min-height: 350px;
 }
 
 .platform-feature-media img {
