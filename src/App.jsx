@@ -709,23 +709,23 @@ function CardGrid({ title, items }) {
         {items.map((item) => {
           const isExpandable = Boolean(item.readMoreText)
           const isExpanded = Boolean(expandedCards[item.title])
-          const bodyText = isExpandable ? item.readMoreText : item.text
 
           return (
             <article key={item.title} className="card">
               <h3>{item.title}</h3>
-              <p className={`card-summary ${isExpandable ? 'card-summary-expandable' : ''} ${isExpanded ? 'expanded' : ''}`}>
-                {bodyText}
-              </p>
+              <p className="card-summary">{item.text}</p>
               {isExpandable ? (
-                <button
-                  type="button"
-                  className="card-read-more-btn"
-                  onClick={() => toggleExpandedCard(item.title)}
-                  aria-expanded={isExpanded}
-                >
-                  {isExpanded ? 'Daha Az Göster' : 'Devamını Oku'}
-                </button>
+                <>
+                  <button
+                    type="button"
+                    className="card-read-more-btn"
+                    onClick={() => toggleExpandedCard(item.title)}
+                    aria-expanded={isExpanded}
+                  >
+                    {isExpanded ? 'Daha Az Göster' : 'Devamını Oku'}
+                  </button>
+                  {isExpanded ? <p className="card-read-more-text">{item.readMoreText}</p> : null}
+                </>
               ) : null}
             </article>
           )
@@ -1309,21 +1309,21 @@ function OtizmPage() {
       cards={[
         {
           title: 'Otizm ve DEHB Taraması',
-          text: 'Otizm, DEHB taraması, değerlendirmesi ve danışmanlığı hizmeti vermekteyim.',
+          text: 'Otizm ve DEHB Ön Taraması\nYolculuğunuza netlik kazandırın',
           readMoreText:
-            'Otizm ve DEHB Ön Taraması\nYolculuğunuza netlik kazandırın\nOtizm ve DEHB ön taraması, çocuklarınızın ihtiyaçlarını ve deneyimlerini anlamaya yönelik destekleyici bir ilk adımdır. Bu süreç, çocuğunuzun tam bir değerlendirmeye ihtiyaç duyup duymadığını belirlemeye yardımcı olur ve rehberlik sağlar.\nTarama süreci yaklaşık 3 saat sürer ve şunları içerir:\n- Ayrıntılı klinik görüşme\n- Gelişimsel öykü\n- Kısa değerlendirme ölçekleri\nTarama sonucunda, çocuğunuzun OSD veya DEHB riski hakkında bilgi verilir ve gerekirse daha kapsamlı bir nörogelişimsel değerlendirme için yönlendirme sağlanır. Bu sayede aileler, hızlı bir şekilde bilgi alabilir ve sonraki adımları planlayabilir.',
+            'Otizm ve DEHB ön taraması, çocuklarınızın ihtiyaçlarını ve deneyimlerini anlamaya yönelik destekleyici bir ilk adımdır. Bu süreç, çocuğunuzun tam bir değerlendirmeye ihtiyaç duyup duymadığını belirlemeye yardımcı olur ve rehberlik sağlar.\nTarama süreci yaklaşık 3 saat sürer ve şunları içerir:\n- Ayrıntılı klinik görüşme\n- Gelişimsel öykü\n- Kısa değerlendirme ölçekleri\nTarama sonucunda, çocuğunuzun OSD veya DEHB riski hakkında bilgi verilir ve gerekirse daha kapsamlı bir nörogelişimsel değerlendirme için yönlendirme sağlanır. Bu sayede aileler, hızlı bir şekilde bilgi alabilir ve sonraki adımları planlayabilir.',
         },
         {
           title: 'Nörogelişimsel Değerlendirme',
-          text: 'Otizm, Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) dahil olmak üzere nörogelişimsel bozuklukların değerlendirilmesi ve yönetimi konusunda uzmanım.',
+          text: 'Nörogelişimsel Değerlendirme ve Raporlama\nAltın standart araçlarla kapsamlı inceleme ve detaylı rapor',
           readMoreText:
-            'Nörogelişimsel Değerlendirme ve Raporlama\nAltın standart araçlarla kapsamlı inceleme ve detaylı rapor\nNörogelişimsel değerlendirme, çocuğunuzun gelişimsel, bilişsel ve davranışsal profilini ayrıntılı şekilde anlamaya yönelik kapsamlı bir süreçtir. Bu süreç, Otizm Spektrum Durumu (OSD) veya Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) açısından daha derinlemesine bir analiz sağlar ve genellikle 6-8 hafta süren kapsamlı bir rapor ile tamamlanır.\nDeğerlendirme süreci şunları içerir:\n- Ayrıntılı klinik görüşme ve gelişimsel öykü\n- Aile ve eğitimcilerden çoklu bilgi kaynakları\n- Altın standart değerlendirme araçlarının uygulanması, örn. ADOS-2\n- Bilişsel, sosyal, duygusal ve yürütücü işlevlerin kapsamlı ölçümü\nDeğerlendirme sonunda, çocuğunuzun güçlü yanları, destek gereksinimleri ve olası müdahale alanları detaylı bir rapor ile sunulur. Tüm çalışmalar, Birleşik Krallık klinik standartları ve NICE rehberleri doğrultusunda yürütülmektedir.',
+            'Nörogelişimsel değerlendirme, çocuğunuzun gelişimsel, bilişsel ve davranışsal profilini ayrıntılı şekilde anlamaya yönelik kapsamlı bir süreçtir. Bu süreç, Otizm Spektrum Durumu (OSD) veya Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) açısından daha derinlemesine bir analiz sağlar ve genellikle 6-8 hafta süren kapsamlı bir rapor ile tamamlanır.\nDeğerlendirme süreci şunları içerir:\n- Ayrıntılı klinik görüşme ve gelişimsel öykü\n- Aile ve eğitimcilerden çoklu bilgi kaynakları\n- Altın standart değerlendirme araçlarının uygulanması, örn. ADOS-2\n- Bilişsel, sosyal, duygusal ve yürütücü işlevlerin kapsamlı ölçümü\nDeğerlendirme sonunda, çocuğunuzun güçlü yanları, destek gereksinimleri ve olası müdahale alanları detaylı bir rapor ile sunulur. Tüm çalışmalar, Birleşik Krallık klinik standartları ve NICE rehberleri doğrultusunda yürütülmektedir.',
         },
         {
           title: 'Attentioner – Dikkatimi Topluyorum',
-          text: 'DEHB alanında, 7-18 yaş arası çocuklarla bilimsel temelli Attentioner – Dikkatimi Topluyorum Programı ile dikkat geliştirme çalışmaları yürütüyorum.',
+          text: 'Attentioner - Dikkatimi Topluyorum Programı: Almanya Bremen Üniversitesi\'nde nöropsikolojik temelli olarak geliştirilmiştir.',
           readMoreText:
-            'Attentioner - Dikkatimi Topluyorum Programı: Almanya Bremen Üniversitesi\'nde nöropsikolojik temelli olarak geliştirilmiştir.\nDikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) tanısı almış veya dikkatle ilgili güçlükler yaşayan çocuklar için tasarlanmış bir bireysel ve grup eğitim programıdır. Program, 7-18 yaş bireylerin dikkat ve yürütücü işlevlerini etkili bir biçimde geliştirmeyi hedefler.\nProgram, iki temel ilkeye dayanır:\n- Öğrenme Psikolojisi\n- Nöropsikolojik Temeller\nDikkatimi Topluyorum\'un bütün oturumlarında, kolaydan zora doğru uyaranlar, şifreler ve etkinliklerle çocuğun:\n- Seçici Dikkat\n- Bölünmüş Dikkat\n- Odaklanma\n- Zamanlama\nişlevleri etkili biçimde iyileştirilir. Program, çocukluk çağına uygun eğlenceli elementlerle desteklenmiştir',
+            'Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) tanısı almış veya dikkatle ilgili güçlükler yaşayan çocuklar için tasarlanmış bir bireysel ve grup eğitim programıdır. Program, 7-18 yaş bireylerin dikkat ve yürütücü işlevlerini etkili bir biçimde geliştirmeyi hedefler.\nProgram, iki temel ilkeye dayanır:\n- Öğrenme Psikolojisi\n- Nöropsikolojik Temeller\nDikkatimi Topluyorum\'un bütün oturumlarında, kolaydan zora doğru uyaranlar, şifreler ve etkinliklerle çocuğun:\n- Seçici Dikkat\n- Bölünmüş Dikkat\n- Odaklanma\n- Zamanlama\nişlevleri etkili biçimde iyileştirilir. Program, çocukluk çağına uygun eğlenceli elementlerle desteklenmiştir',
         },
       ]}
       splitA={{
