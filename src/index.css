@@ -89,34 +89,33 @@ a {
 }
 
 .site-header.home-overlay .header-inner {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
-  min-height: auto;
+  justify-content: space-between;
   gap: 20px;
+  min-height: auto;
   padding: 16px 0;
+  width: min(1560px, 98%);
+  margin: 0 auto;
 }
 
 .site-header.home-overlay .brand {
-  grid-column: 1;
-  grid-row: 1;
+  flex-shrink: 0;
+  margin-right: 0;
 }
 
 .site-header.home-overlay .desktop-nav {
-  grid-column: 1 / -1;
-  grid-row: 1;
+  flex: 1;
   justify-content: space-around;
   margin: 0;
-  flex: none;
-  width: 100%;
+  gap: clamp(16px, 3vw, 48px);
 }
 
 .site-header.home-overlay .header-social {
-  grid-column: 1 / -1;
-  grid-row: 2;
+  flex-shrink: 0;
   justify-content: flex-end;
   display: flex;
-  width: 100%;
+  gap: 8px;
 }
 
 .site-header:not(.home-overlay) .header-inner {
