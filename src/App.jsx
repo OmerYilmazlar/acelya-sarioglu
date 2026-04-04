@@ -99,9 +99,9 @@ const seoByPath = {
   '/cocuk-ergen': {
     title: 'Çocuk ve Ergen Psikoterapi | Açelya Sarıoğlu',
     description:
-      'Çocuk ve ergenler için güvenli terapi alanı: duygusal zorluklar, okul uyumu, davranış sorunları ve ebeveyn danışmanlığı.',
+      'Çocuk ve ergenler için güvenli terapi alanı: duygusal zorluklar, okul uyumu, davranış sorunları, dikkat geliştirme çalışmaları ve ebeveyn danışmanlığı.',
     keywords:
-      'çocuk psikoloğu, ergen psikoloğu, çocuk terapisi, ergen terapisi, ebeveyn danışmanlığı, oyun terapisi, türk psikolog uk',
+      'çocuk psikoloğu, ergen psikoloğu, çocuk terapisi, ergen terapisi, ebeveyn danışmanlığı, oyun terapisi, dikkat geliştirme, attentioner, türk psikolog uk',
   },
   '/terapi': {
     title: 'Terapi ve Tedavi Yaklaşımları | Açelya Sarıoğlu',
@@ -113,9 +113,9 @@ const seoByPath = {
   '/otizm-dehb': {
     title: 'Otizm ve DEHB Değerlendirme | Açelya Sarıoğlu',
     description:
-      'Otizm ve DEHB için kapsamlı tarama, değerlendirme, raporlama, psiko-eğitim ve bireye özel yönlendirme hizmetleri.',
+      'Otizm ve DEHB için kapsamlı tarama, değerlendirme, raporlama, Attentioner destekli dikkat geliştirme, psiko-eğitim ve bireye özel yönlendirme hizmetleri.',
     keywords:
-      'otizm değerlendirme, dehb değerlendirme, dikkat eksikliği, hiperaktivite bozukluğu, nörogelişimsel değerlendirme, otizm danışmanlık',
+      'otizm değerlendirme, dehb değerlendirme, dikkat eksikliği, hiperaktivite bozukluğu, nörogelişimsel değerlendirme, attentioner, dikkatimi topluyorum programı, otizm danışmanlık',
   },
   '/iletisim': {
     title: 'İletişim | Açelya Sarıoğlu',
@@ -256,7 +256,7 @@ const serviceByPath = {
   },
   '/otizm-dehb': {
     name: 'Otizm ve DEHB Değerlendirme',
-    description: 'Otizm ve DEHB için tarama, değerlendirme, raporlama ve psiko-eğitim odaklı profesyonel danışmanlık.',
+    description: 'Otizm ve DEHB için tarama, değerlendirme, raporlama, Attentioner ve psiko-eğitim odaklı profesyonel danışmanlık.',
   },
 }
 
@@ -289,6 +289,7 @@ const practiceSchema = {
     'Çocuk ve Ergen Terapisi',
     'Otizm Değerlendirmesi',
     'DEHB Değerlendirmesi',
+    'Attentioner Dikkatimi Topluyorum Programı',
     'Online Terapi',
   ],
 }
@@ -707,6 +708,72 @@ function CardGrid({ title, items }) {
   )
 }
 
+function ChildFocusSection() {
+  const workAreas = [
+    {
+      title: 'Çocuk Psikoloğu',
+      text: 'Çocuk Psikoloğu, yaşam boyu süren ve yaşamın temellerini oluşturan çocukluk döneminde çocuklara psikolojik destek sağlayan uzmandır.',
+    },
+    {
+      title: 'Bireysel Farklılıklar',
+      text: 'Çocukların ihtiyaçları, mizacına, çevre koşullarına, anne-baba tutumlarına ve yaşına göre değişim gösterir.',
+    },
+  ]
+
+  const methods = [
+    {
+      title: 'Oyun Terapisi',
+      text: 'Çocuklarla çalışırken sık kullandığım ekollerden biri Oyun Terapisidir.',
+    },
+    {
+      title: 'Bilişsel ve Davranışçı Terapiler',
+      text: 'Çocuklarla çalışırken sık kullandığım diğer yaklaşım Bilişsel ve Davranışçı Terapilerdir.',
+    },
+    {
+      title: 'Dikkat Geliştirme Çalışmaları',
+      text: 'Dikkat Eksikliği ve Hiperaktivite (DEHB) olan 7-18 yaş arası çocuklarla, bilimsel temelli Attentioner – Dikkatimi Topluyorum Programı ile çalışıyorum.',
+    },
+  ]
+
+  return (
+    <section className="section child-focus-section" id="icerik">
+      <div className="section-head">
+        <h2>Çocuk ve Ergen Çalışma Alanları</h2>
+      </div>
+      <div className="child-focus-grid">
+        <article className="child-focus-column">
+          <h3>Çalışma Alanlarım</h3>
+          <div className="child-focus-card-list">
+            {workAreas.map((item) => (
+              <article key={item.title} className="child-focus-card">
+                <h4>{item.title}</h4>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </article>
+
+        <article className="child-focus-column">
+          <h3>Kullandığım Yaklaşımlar</h3>
+          <div className="child-focus-card-list">
+            {methods.map((item) => (
+              <article key={item.title} className="child-focus-card">
+                <h4>{item.title}</h4>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="child-focus-note">
+            <p>
+              Attentioner için detaylı bilgiye <Link to="/otizm-dehb">Otizm ve DEHB</Link> sayfasından ulaşabilirsiniz.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  )
+}
+
 function AffiliationsSection() {
   const logos = [
     { src: tpdLogo, alt: 'Türk Psikologlar Derneği' },
@@ -1077,7 +1144,7 @@ function MockForm({ title = 'Danışmanlık Başvuru Formu' }) {
   )
 }
 
-function PageTemplate({ title, subtitle, image, introTitle, introText, cardsTitle, cards, splitA, splitB, currentPath }) {
+function PageTemplate({ title, subtitle, image, introTitle, introText, cardsTitle, cards, cardsSection, splitA, splitB, currentPath }) {
   return (
     <main>
       <Hero title={title} subtitle={subtitle} image={image} />
@@ -1087,7 +1154,7 @@ function PageTemplate({ title, subtitle, image, introTitle, introText, cardsTitl
         </div>
         <p>{introText}</p>
       </section>
-      <CardGrid title={cardsTitle} items={cards} />
+      {cardsSection || <CardGrid title={cardsTitle} items={cards} />}
       <SplitSection title={splitA.title} text={splitA.text} image={splitA.image} />
       <SplitSection title={splitB.title} text={splitB.text} image={splitB.image} reverse />
       <RelatedServicesSection currentPath={currentPath} />
@@ -1153,13 +1220,7 @@ function CocukPage() {
       image={heroCocukErgen}
       introTitle="Çocuk ve Ergen Psikoterapi"
       introText="Çocuk ve ergen terapisi, yetişkin terapisine benzer şekilde, çocukların zorlayıcı düşüncelerini, duygularını ve davranışlarını ifade edebilecekleri güvenli bir alan sunar. Tıpkı yetişkinler gibi, çocuklar da büyük yaşam değişimlerinden (boşanma, okul değişikliği, sevilen birini kaybetme gibi) duygusal olarak etkilenebilir. Bazı durumlarda, bu duygusal zorluklar zamanla kendiliğinden düzelirken, bazen ise düzelmez. Eğer çocuğunuzun böyle bir durum yaşadığını düşünüyorsanız, onun ihtiyaç duyduğu desteği alabilmesi için uzman bir terapistten yardım almak önemlidir. Çocukken, çoğu zaman duygularımızı tam olarak ifade edecek kelimelere veya yaşam deneyimine sahip olmayız. Bu yüzden, çocukların hayatındaki yetişkinlerin, bir şeylerin yolunda gitmediğini fark etmeleri ve harekete geçmeleri büyük önem taşır."
-      cardsTitle="Çocuklarla Çalıştığım Başlıca Konular"
-      cards={[
-        { title: 'Çocuk Psikoloğu', text: 'Çocuk Psikoloğu, yaşam boyu süren ve yaşamın temellerini oluşturan çocukluk döneminde çocuklara psikolojik destek sağlayan uzmandır.' },
-        { title: 'Bireysel Farklılıklar', text: 'Çocukların ihtiyaçları, mizacına, çevre koşullarına, anne-baba tutumlarına ve yaşına göre değişim gösterir.' },
-        { title: 'Oyun Terapisi', text: 'Çocuklarla çalışırken sık kullandığım ekollerden biri Oyun Terapisidir.' },
-        { title: 'Bilişsel ve Davranışçı Terapiler', text: 'Çocuklarla çalışırken sık kullandığım diğer yaklaşım Bilişsel ve Davranışçı Terapilerdir.' },
-      ]}
+      cardsSection={<ChildFocusSection />}
       splitA={{
         title: 'Çocuğunuz İçin Güvenli Alan',
         text: 'Çocuk Psikoloğu, yaşam boyu süren ve yaşamın temellerini oluşturan çocukluk döneminde çocuklara psikolojik destek sağlayan uzmandır. Çocukların ihtiyaçları, mizacına, çevre koşullarına, anne-baba tutumlarına ve yaşına göre değişim gösterir.',
@@ -1218,6 +1279,7 @@ function OtizmPage() {
         { title: 'Otizm ve DEHB Taraması', text: 'Otizm, DEHB taraması, değerlendirmesi ve danışmanlığı hizmeti vermekteyim.' },
         { title: 'Nörogelişimsel Değerlendirme', text: 'Otizm, Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) dahil olmak üzere nörogelişimsel bozuklukların değerlendirilmesi ve yönetimi konusunda uzmanım.' },
         { title: 'Bakım Paketi ve Raporlama', text: 'Altın standart değerlendirme araçlarını kullanarak kapsamlı nörogelişimsel tarama ve değerlendirme hizmetleri sunuyorum. Değerlendirme sonrasında, bireyin ihtiyaçlarına özel olarak hazırlanmış bir bakım paketi sunuyorum.' },
+        { title: 'Dikkat Geliştirme ve Attentioner', text: 'DEHB alanında, 7-18 yaş arası çocuklarla bilimsel temelli Attentioner – Dikkatimi Topluyorum Programı ile dikkat geliştirme çalışmaları yürütüyorum.' },
         { title: 'Ek Ruh Sağlığı Desteği', text: 'Değerlendirme veya danışmanlık sürecinde, kaygı bozuklukları, depresif ruh hali ve obsesif davranışlar gibi diğer ruh sağlığı sorunları da ortaya çıkabilir. Bu tür zorluklar için de gerekli tedavi ve destek sunmaktayım.' },
       ]}
       splitA={{
@@ -1226,8 +1288,8 @@ function OtizmPage() {
         image: stockImages.otizmSplitA,
       }}
       splitB={{
-        title: 'Bilgi ve Randevu',
-        text: 'Otizm ve Dikkat Eksikliği ve Hiperaktivite Bozukluğu Değerlendirme ve Tanı süreçleri ile ilgili bilgi almak için benimle iletişime geçebilirsiniz.',
+        title: 'Attentioner (Dikkatimi Topluyorum Programı)',
+        text: 'Dikkat Eksikliği ve Hiperaktivite (DEHB) olan 7-18 yaş arası çocuklarla, bilimsel temelli Attentioner – Dikkatimi Topluyorum Programı ile çalışıyorum. Program; dikkati sürdürme, dürtüsellik yönetimi ve günlük işlevselliği güçlendirmeye destek olur.',
         image: stockImages.otizmSplitB,
       }}
       currentPath="/otizm-dehb"
