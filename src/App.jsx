@@ -844,9 +844,7 @@ function PlatformReferencesSection() {
             key={platform.name}
             className={`platform-feature ${index % 2 === 1 ? 'reverse' : ''} ${index === 1 || index === 2 ? 'compact' : ''}`}
           >
-            <div className="platform-feature-media">
-              <img src={platform.image} alt={`${platform.name} profil görüntüsü`} loading="lazy" />
-            </div>
+            <div className="platform-feature-media" aria-hidden="true" />
             <div className="platform-feature-content">
               <div className="platform-feature-frame">
                 <h3>{platform.name}</h3>
