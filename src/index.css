@@ -525,13 +525,8 @@ a {
   background: var(--white);
   border: 1px solid var(--line);
   padding: 20px;
-  min-height: 230px;
   display: flex;
   flex-direction: column;
-}
-
-.card-grid.card-grid-three .card {
-  min-height: 250px;
 }
 
 .card h3 {
@@ -546,12 +541,11 @@ a {
 }
 
 .card-summary {
-  min-height: 82px;
   white-space: pre-line;
 }
 
 .card-read-more-btn {
-  margin-top: auto;
+  margin-top: 12px;
   border: 1px solid rgba(19, 105, 117, 0.55);
   background: rgba(21, 123, 139, 0.1);
   color: var(--teal);
@@ -1209,12 +1203,16 @@ a {
 
 .platform-feature-media {
   min-height: 300px;
+  background: #f4f7f8;
+  display: grid;
+  place-items: center;
 }
 
 .platform-feature-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: clamp(12px, 2vw, 24px);
   display: block;
 }
 

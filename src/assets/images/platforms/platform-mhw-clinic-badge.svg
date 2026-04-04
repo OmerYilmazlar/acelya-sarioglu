@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">MHW Clinic Platform Badge</title>
+  <desc id="desc">Branded style badge for My Health and Wellbeing Clinic listing</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8d6f45" />
+      <stop offset="100%" stop-color="#5f4a2d" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" rx="28" />
+  <rect x="88" y="88" width="1024" height="624" fill="rgba(255,255,255,0.1)" rx="24" />
+  <text x="120" y="335" fill="#fff7ea" font-size="72" font-family="Arial, sans-serif" font-weight="700">MY HEALTH &amp; WELLBEING CLINIC</text>
+  <text x="120" y="450" fill="#ffffff" font-size="120" font-family="Georgia, serif" font-weight="700">MHW Clinic</text>
+  <text x="120" y="540" fill="#ffecd0" font-size="40" font-family="Arial, sans-serif">Clinical Profile Listing</text>
+</svg>

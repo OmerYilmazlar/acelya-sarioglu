@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">LinkedIn Platform Badge</title>
+  <desc id="desc">Branded style badge for LinkedIn profile platform</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a66c2" />
+      <stop offset="100%" stop-color="#004182" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" rx="28" />
+  <rect x="88" y="88" width="1024" height="624" fill="rgba(255,255,255,0.08)" rx="24" />
+  <text x="120" y="420" fill="#ffffff" font-size="220" font-family="Georgia, serif" font-weight="700">in</text>
+  <text x="360" y="420" fill="#ffffff" font-size="120" font-family="Georgia, serif" font-weight="700">LinkedIn</text>
+  <text x="360" y="500" fill="#d9ebff" font-size="42" font-family="Arial, sans-serif">Professional Network Profile</text>
+</svg>

@@ -27,10 +27,10 @@ import sectionPsychologistOfficePeggy from './assets/images/sections/psychologis
 import eventParticipation1 from './assets/images/events/event-participation-1.jpg'
 import eventParticipation2 from './assets/images/events/event-participation-2.jpg'
 import eventParticipation3 from './assets/images/events/event-participation-3.jpg'
-import platformLinkedin from './assets/images/platforms/platform-linkedin.jpg'
-import platformPsychologyToday from './assets/images/platforms/platform-psychology-today.jpeg'
-import platformItsComplicated from './assets/images/platforms/platform-its-complicated.png'
-import platformMhwClinic from './assets/images/platforms/platform-mhw-clinic.webp'
+import platformLinkedin from './assets/images/platforms/platform-linkedin-badge.svg'
+import platformPsychologyToday from './assets/images/platforms/platform-psychology-today-badge.svg'
+import platformItsComplicated from './assets/images/platforms/platform-complicated-life-badge.svg'
+import platformMhwClinic from './assets/images/platforms/platform-mhw-clinic-badge.svg'
 
 const navItems = [
   { label: 'Yetişkin', path: '/yetiskin' },

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Psychology Today Platform Badge</title>
+  <desc id="desc">Branded style badge for Psychology Today listing</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4ea6d8" />
+      <stop offset="100%" stop-color="#2b6f9f" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" rx="28" />
+  <rect x="88" y="88" width="1024" height="624" fill="rgba(255,255,255,0.12)" rx="24" />
+  <text x="120" y="390" fill="#ffffff" font-size="110" font-family="Georgia, serif" font-weight="700">Psychology Today</text>
+  <text x="120" y="490" fill="#e7f7ff" font-size="42" font-family="Arial, sans-serif">Verified Therapist Profile</text>
+</svg>
