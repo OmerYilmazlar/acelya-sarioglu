@@ -531,11 +531,11 @@ a {
 }
 
 .card-grid.card-grid-three .card {
-  min-height: 520px;
+  min-height: 430px;
 }
 
 .card-grid.card-grid-three .card.expanded {
-  min-height: initial;
+  min-height: 860px;
 }
 
 .card h3 {
