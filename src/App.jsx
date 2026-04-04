@@ -1372,7 +1372,7 @@ function HomePage() {
   return (
     <main>
       <Hero
-        title="Otizm & DEHB Değerlendirme ve Tanı Servisleri"
+        title="Terapi, Otizm & DEHB Değerlendirme ve Tanı Servisleri"
         subtitle="Uzman Klinik Psikolog Açelya Sarıoğlu"
         image={homeCarouselImages[0]}
         images={homeCarouselImages}
