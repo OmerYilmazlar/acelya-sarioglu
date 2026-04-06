@@ -1297,16 +1297,16 @@ function OtizmPage() {
             'Otizm ve DEHB ön taraması, çocuklarınızın ihtiyaçlarını ve deneyimlerini anlamaya yönelik destekleyici bir ilk adımdır. Bu süreç, çocuğunuzun tam bir değerlendirmeye ihtiyaç duyup duymadığını belirlemeye yardımcı olur ve rehberlik sağlar.\nTarama süreci yaklaşık 3 saat sürer ve şunları içerir:\n- Ayrıntılı klinik görüşme\n- Gelişimsel öykü\n- Kısa değerlendirme ölçekleri\nTarama sonucunda, çocuğunuzun OSD veya DEHB riski hakkında bilgi verilir ve gerekirse daha kapsamlı bir nörogelişimsel değerlendirme için yönlendirme sağlanır. Bu sayede aileler, hızlı bir şekilde bilgi alabilir ve sonraki adımları planlayabilir.',
         },
         {
-          title: 'Attentioner – Dikkatimi Topluyorum',
-          text: 'Attentioner - Dikkatimi Topluyorum Programı: Almanya Bremen Üniversitesi\'nde nöropsikolojik temelli olarak geliştirilmiştir.',
-          readMoreText:
-            'Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) tanısı almış veya dikkatle ilgili güçlükler yaşayan çocuklar için tasarlanmış bir bireysel ve grup eğitim programıdır. Program, 7-18 yaş bireylerin dikkat ve yürütücü işlevlerini etkili bir biçimde geliştirmeyi hedefler.\nProgram, iki temel ilkeye dayanır:\n- Öğrenme Psikolojisi\n- Nöropsikolojik Temeller\nDikkatimi Topluyorum\'un bütün oturumlarında, kolaydan zora doğru uyaranlar, şifreler ve etkinliklerle çocuğun:\n- Seçici Dikkat\n- Bölünmüş Dikkat\n- Odaklanma\n- Zamanlama\nişlevleri etkili biçimde iyileştirilir. Program, çocukluk çağına uygun eğlenceli elementlerle desteklenmiştir',
-        },
-        {
           title: 'Nörogelişimsel Değerlendirme ve Tanı Raporlama (Birleşik Krallık Standartlarında)',
           text: 'Birleşik Krallık klinik standartlarına ve NICE rehberlerine uygun olarak, çocuklar ve yetişkinler için Otizm Spektrum Durumu (OSD) ve Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) alanlarında kapsamlı tanısal değerlendirme ve detaylı klinik raporlama hizmeti sunuyorum.',
           readMoreText:
             'Nörogelişimsel değerlendirme, bireyin gelişimsel, bilişsel ve davranışsal profilini ayrıntılı şekilde anlamaya yönelik kapsamlı bir süreçtir. Bu süreç, OSD ve/veya DEHB açısından derinlemesine analiz sağlar ve genellikle 6–8 hafta içerisinde tamamlanan kapsamlı bir rapor ile sonuçlanır.\nDeğerlendirme süreci şunları içerir:\n- Ayrıntılı klinik görüşme ve gelişimsel öykü alma\n- Aile ve eğitimcilerden çoklu bilgi kaynaklarının toplanması\n- Altın standart değerlendirme araçlarının uygulanması (örneğin ADOS-2)\n- Bilişsel, sosyal, duygusal ve yürütücü işlevlerin kapsamlı değerlendirilmesi\nDeğerlendirme sonunda, bireyin güçlü yönleri, destek ihtiyaçları ve önerilen müdahale alanları ayrıntılı bir klinik rapor ile sunulur.',
+        },
+        {
+          title: 'Attentioner – Dikkatimi Topluyorum',
+          text: 'Attentioner - Dikkatimi Topluyorum Programı: Almanya Bremen Üniversitesi\'nde nöropsikolojik temelli olarak geliştirilmiştir.',
+          readMoreText:
+            'Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB) tanısı almış veya dikkatle ilgili güçlükler yaşayan çocuklar için tasarlanmış bir bireysel ve grup eğitim programıdır. Program, 7-18 yaş bireylerin dikkat ve yürütücü işlevlerini etkili bir biçimde geliştirmeyi hedefler.\nProgram, iki temel ilkeye dayanır:\n- Öğrenme Psikolojisi\n- Nöropsikolojik Temeller\nDikkatimi Topluyorum\'un bütün oturumlarında, kolaydan zora doğru uyaranlar, şifreler ve etkinliklerle çocuğun:\n- Seçici Dikkat\n- Bölünmüş Dikkat\n- Odaklanma\n- Zamanlama\nişlevleri etkili biçimde iyileştirilir. Program, çocukluk çağına uygun eğlenceli elementlerle desteklenmiştir',
         },
       ]}
       splitA={{
