@@ -1292,7 +1292,7 @@ function OtizmPage() {
       cards={[
         {
           title: 'Otizm ve DEHB Taraması',
-          text: 'Otizm ve DEHB Ön Taraması\nYolculuğunuza netlik kazandırın',
+          text: 'Otizm ve DEHB Ön Taraması ile\nYolculuğunuza netlik kazandırın',
           readMoreText:
             'Otizm ve DEHB ön taraması, çocuklarınızın ihtiyaçlarını ve deneyimlerini anlamaya yönelik destekleyici bir ilk adımdır. Bu süreç, çocuğunuzun tam bir değerlendirmeye ihtiyaç duyup duymadığını belirlemeye yardımcı olur ve rehberlik sağlar.\nTarama süreci yaklaşık 3 saat sürer ve şunları içerir:\n- Ayrıntılı klinik görüşme\n- Gelişimsel öykü\n- Kısa değerlendirme ölçekleri\nTarama sonucunda, çocuğunuzun OSD veya DEHB riski hakkında bilgi verilir ve gerekirse daha kapsamlı bir nörogelişimsel değerlendirme için yönlendirme sağlanır. Bu sayede aileler, hızlı bir şekilde bilgi alabilir ve sonraki adımları planlayabilir.',
         },
