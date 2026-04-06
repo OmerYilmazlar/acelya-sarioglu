@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-const siteUrl = 'https://acelyasarioglu.com'
+const siteUrl = 'https://www.acelyasarioglu.com'
 const distDir = path.resolve('dist')
 const templatePath = path.join(distDir, 'index.html')
 

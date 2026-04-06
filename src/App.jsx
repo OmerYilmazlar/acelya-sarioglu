@@ -126,7 +126,7 @@ const seoByPath = {
   },
 }
 
-const siteUrl = 'https://acelyasarioglu.com'
+const siteUrl = 'https://www.acelyasarioglu.com'
 
 const toAbsoluteUrl = (value) => (value.startsWith('http') ? value : `${siteUrl}${value}`)
 
