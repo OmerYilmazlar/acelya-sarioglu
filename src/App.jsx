@@ -22,6 +22,7 @@ import sectionPsychologySessionMart from './assets/images/sections/psychology-se
 import sectionChildTherapyRoomTimur from './assets/images/sections/child-therapy-room-timur.jpg'
 import sectionConsultationSilverkblackA from './assets/images/sections/consultation-silverkblack-a.jpg'
 import sectionConsultationSilverkblackB from './assets/images/sections/consultation-silverkblack-b.jpg'
+import onlineTherapyImage from './assets/images/sections/online_therapy.png'
 import sectionTraumaTherapyNewleaf from './assets/images/sections/trauma-therapy-newleaf.jpg'
 import sectionPsychologistOfficePeggy from './assets/images/sections/psychologist-office-peggy.jpg'
 import eventParticipation1 from './assets/images/events/event-participation-1.jpg'
@@ -71,7 +72,7 @@ const stockImages = {
   cocukSplitA: sectionChildTherapyRoomTimur,
   cocukSplitB: sectionConsultationSilverkblackB,
   terapiSplitA: sectionTherapyNotesCottonbro,
-  terapiSplitB: sectionPsychologySessionMart,
+  terapiSplitB: onlineTherapyImage,
   otizmSplitA: sectionTraumaTherapyNewleaf,
   otizmSplitB: sectionPsychologistOfficePeggy,
   homeSplitA: sectionTherapySessionPolina,
