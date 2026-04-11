@@ -1429,7 +1429,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div>
-        <h3>Açelya Klinik Psikoloji</h3>
+        <h3>Klinik Psikolog Açelya Sarıoğlu</h3>
         <p>Yetişkin, çocuk ve ergen psikoterapi hizmetleri ile otizm ve DEHB değerlendirme danışmanlığı.</p>
       </div>
       <div>
