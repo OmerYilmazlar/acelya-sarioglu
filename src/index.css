@@ -200,6 +200,8 @@ a {
   color: var(--teal);
   border-bottom: 2px solid transparent;
   padding-bottom: 4px;
+  white-space: nowrap;
+  text-align: center;
 }
 
 .site-header.home-overlay .desktop-nav {
