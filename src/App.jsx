@@ -9,7 +9,7 @@ import bpsLogo from './assets/images/affiliations/british-psychological-society.
 import isstLogo from './assets/images/affiliations/isst-schema-therapy.png'
 import datemLogo from './assets/images/affiliations/datem-logo.png'
 import aptLogo from './assets/images/affiliations/association-for-play-therapy.png'
-import brandLogo from './assets/images/brand/acelya-logo.png'
+import brandLogo from './assets/images/brand/logo.png'
 import heroYetiskin from './assets/images/pages/hero-yetiskin.jpg'
 import heroCocukErgen from './assets/images/pages/hero-cocuk-ergen.jpg'
 import heroTerapi from './assets/images/pages/hero-terapi.jpg'
