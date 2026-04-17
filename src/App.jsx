@@ -726,17 +726,6 @@ function CardGrid({ title, items }) {
 }
 
 function ChildFocusSection() {
-  const workAreas = [
-    {
-      title: 'Çocuk Psikoloğu',
-      text: 'Çocuk Psikoloğu, yaşam boyu süren ve yaşamın temellerini oluşturan çocukluk döneminde çocuklara psikolojik destek sağlayan uzmandır.',
-    },
-    {
-      title: 'Bireysel Farklılıklar',
-      text: 'Çocukların ihtiyaçları, mizacına, çevre koşullarına, anne-baba tutumlarına ve yaşına göre değişim gösterir.',
-    },
-  ]
-
   const methods = [
     {
       title: 'Oyun Terapisi',
@@ -755,18 +744,6 @@ function ChildFocusSection() {
   return (
     <section className="section child-focus-section" id="icerik">
       <div className="section-head">
-        <h2>Çalışma Alanlarım</h2>
-      </div>
-      <div className="child-focus-list">
-        {workAreas.map((item) => (
-          <article key={item.title} className="card child-focus-card">
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </article>
-        ))}
-      </div>
-
-      <div className="section-head child-focus-spacer">
         <h2>Kullandığım Yaklaşımlar</h2>
       </div>
       <div className="child-focus-list">
@@ -1238,7 +1215,7 @@ function CocukPage() {
       cardsSection={<ChildFocusSection />}
       splitA={{
         title: 'Çocuğunuz İçin Güvenli Alan',
-        text: 'Çocuk Psikoloğu, yaşam boyu süren ve yaşamın temellerini oluşturan çocukluk döneminde çocuklara psikolojik destek sağlayan uzmandır. Çocukların ihtiyaçları, mizacına, çevre koşullarına, anne-baba tutumlarına ve yaşına göre değişim gösterir.',
+        text: 'Çocuk ve ergenlerle yürütülen terapi sürecinde, yaş dönemine uygun, güvenli ve destekleyici bir çalışma alanı oluşturuyorum. Amaç; duygusal zorlukları anlamlandırmak, baş etme becerilerini güçlendirmek ve aileyi sürece aktif şekilde dahil etmektir.',
         image: stockImages.cocukSplitA,
       }}
       splitB={{
