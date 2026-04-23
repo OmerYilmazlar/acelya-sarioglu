@@ -3,6 +3,7 @@ import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react
 import cpcHands from './assets/images/home/cpc-hands.jpg'
 import harleyStreet from './assets/images/home/harley-street.jpg'
 import londonView1 from './assets/images/home/london4k.jpeg'
+import mainHomeImage from './assets/images/home/main-image.png'
 import sevenLionYard from './assets/images/home/seven-lion-yard-2.webp'
 import tpdLogo from './assets/images/affiliations/turkish-psychological-association.png'
 import bpsLogo from './assets/images/affiliations/british-psychological-society.png'
@@ -80,7 +81,7 @@ const stockImages = {
   therapyShowcase: sectionPsychologySessionMart,
 }
 
-const homeCarouselImages = ['/main_image.png', londonView1, cpcHands, harleyStreet, sevenLionYard]
+const homeCarouselImages = [londonView1, cpcHands, harleyStreet, sevenLionYard]
 
 const seoByPath = {
   '/': {
@@ -1349,7 +1350,7 @@ function HomePage() {
       <section className="section" id="icerik">
         <div className="home-intro-grid">
           <figure className="home-intro-image-wrap">
-            <img src={acelyaPortrait} alt="Uzman Klinik Psikolog Açelya Sarıoğlu" className="home-intro-image" loading="lazy" />
+            <img src={mainHomeImage} alt="Uzman Klinik Psikolog Açelya Sarıoğlu" className="home-intro-image" loading="lazy" />
           </figure>
           <article className="home-intro-copy">
             <div className="section-head centered">
