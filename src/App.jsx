@@ -76,7 +76,7 @@ const stockImages = {
   terapiSplitB: onlineTherapyImage,
   otizmSplitA: sectionTraumaTherapyNewleaf,
   otizmSplitB: sectionPsychologistOfficePeggy,
-  homeSplitA: sectionTherapySessionPolina,
+  homeSplitA: sectionConsultationSilverkblackA,
   homeSplitB: sectionTherapyNotesCottonbro,
   therapyShowcase: sectionPsychologySessionMart,
 }
@@ -1339,7 +1339,13 @@ function HomePage() {
   return (
     <main>
       <Hero
-        title="Terapi, Otizm & DEHB Değerlendirme ve Tanı Servisleri"
+        title={
+          <>
+            Terapi Hizmetleri ve
+            <br />
+            Otizm & DEHB Değerlendirme
+          </>
+        }
         subtitle="Uzman Klinik Psikolog Açelya Sarıoğlu"
         image={homeCarouselImages[0]}
         images={homeCarouselImages}
