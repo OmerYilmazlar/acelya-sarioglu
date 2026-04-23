@@ -20,7 +20,6 @@ import acelyaPortrait from './assets/images/profile/acelya-sarioglu.jpeg'
 import sectionTherapyNotesCottonbro from './assets/images/sections/therapy-notes-cottonbro.jpg'
 import sectionPsychologySessionMart from './assets/images/sections/psychology-session-mart.jpg'
 import sectionChildTherapyRoomTimur from './assets/images/sections/child-therapy-room-timur.jpg'
-import sectionConsultationSilverkblackA from './assets/images/sections/consultation-silverkblack-a.jpg'
 import sectionConsultationSilverkblackB from './assets/images/sections/consultation-silverkblack-b.jpg'
 import sectionNewImage from './assets/images/sections/new-image.jpg'
 import sectionOzenleUyarlanmisTerapi from './assets/images/sections/ozenle-uyarlanmis-terapi.jpg'
@@ -70,10 +69,10 @@ const stockImages = {
   menuClinic: sectionPsychologistOfficePeggy,
   menuFamily: sectionChildTherapyRoomTimur,
   yetiskinSplitA: sectionNewImage,
-  yetiskinSplitB: sectionConsultationSilverkblackA,
+  yetiskinSplitB: sectionOzenleUyarlanmisTerapi,
   cocukSplitA: sectionChildTherapyRoomTimur,
   cocukSplitB: sectionConsultationSilverkblackB,
-  terapiSplitA: sectionTherapyNotesCottonbro,
+  terapiSplitA: sectionNewImage,
   terapiSplitB: onlineTherapyImage,
   otizmSplitA: sectionTraumaTherapyNewleaf,
   otizmSplitB: sectionPsychologistOfficePeggy,
