@@ -1398,7 +1398,6 @@ function HomePage() {
           { title: 'Yetişkin Psikoterapi', text: 'Kaygı, depresyon, panik atak, travma sonrası stres ve ilişki zorlukları gibi alanlarda kişiye özel terapi süreci.' },
           { title: 'Çocuk ve Ergen', text: 'Duygusal ve davranışsal zorluklarda çocuğun gelişim dönemine uygun yapılandırılmış psikolojik destek.' },
           { title: 'Otizm ve DEHB', text: 'Tarama, değerlendirme, raporlama ve ihtiyaçlara uygun yönlendirmeyi içeren nörogelişimsel destek modeli.' },
-          { title: 'Terapi Ekolleri', text: 'Bilişsel ve Davranışçı Terapiler, Şema Terapi, Oyun Terapisi, Mindfulness ve çözüm odaklı yaklaşımlar.' },
         ]}
       />
       <HomeChelseaSplit
