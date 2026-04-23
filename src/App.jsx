@@ -22,6 +22,8 @@ import sectionPsychologySessionMart from './assets/images/sections/psychology-se
 import sectionChildTherapyRoomTimur from './assets/images/sections/child-therapy-room-timur.jpg'
 import sectionConsultationSilverkblackA from './assets/images/sections/consultation-silverkblack-a.jpg'
 import sectionConsultationSilverkblackB from './assets/images/sections/consultation-silverkblack-b.jpg'
+import sectionNewImage from './assets/images/sections/new-image.jpg'
+import sectionOzenleUyarlanmisTerapi from './assets/images/sections/ozenle-uyarlanmis-terapi.jpg'
 import onlineTherapyImage from './assets/images/sections/online_therapy.png'
 import sectionTraumaTherapyNewleaf from './assets/images/sections/trauma-therapy-newleaf.jpg'
 import sectionPsychologistOfficePeggy from './assets/images/sections/psychologist-office-peggy.jpg'
@@ -67,7 +69,7 @@ const menuGroups = {
 const stockImages = {
   menuClinic: sectionPsychologistOfficePeggy,
   menuFamily: sectionChildTherapyRoomTimur,
-  yetiskinSplitA: sectionPsychologistOfficePeggy,
+  yetiskinSplitA: sectionNewImage,
   yetiskinSplitB: sectionConsultationSilverkblackA,
   cocukSplitA: sectionChildTherapyRoomTimur,
   cocukSplitB: sectionConsultationSilverkblackB,
@@ -75,7 +77,7 @@ const stockImages = {
   terapiSplitB: onlineTherapyImage,
   otizmSplitA: sectionTraumaTherapyNewleaf,
   otizmSplitB: sectionPsychologistOfficePeggy,
-  homeSplitA: sectionConsultationSilverkblackA,
+  homeSplitA: sectionOzenleUyarlanmisTerapi,
   homeSplitB: sectionTherapyNotesCottonbro,
   therapyShowcase: sectionPsychologySessionMart,
 }
@@ -647,6 +649,19 @@ function FloatingScrollArrows() {
 function Hero({ title, subtitle, image, images, homeStyle = false, homeCtaLabel = 'Daha Fazla', homeCtaTo = '/iletisim' }) {
   const hasCarousel = Array.isArray(images) && images.length > 0
   const [activeIndex, setActiveIndex] = useState(0)
+
+  useEffect(() => {
+    if (!hasCarousel) return
+
+    images.forEach((src) => {
+      const preloadImage = new Image()
+      preloadImage.decoding = 'async'
+      preloadImage.src = src
+      if (typeof preloadImage.decode === 'function') {
+        preloadImage.decode().catch(() => {})
+      }
+    })
+  }, [hasCarousel, images])
 
   useEffect(() => {
     if (!hasCarousel) return undefined
