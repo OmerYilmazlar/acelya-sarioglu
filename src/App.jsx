@@ -80,7 +80,7 @@ const stockImages = {
   therapyShowcase: sectionPsychologySessionMart,
 }
 
-const homeCarouselImages = [londonView1, cpcHands, harleyStreet, sevenLionYard]
+const homeCarouselImages = ['/main_image.png', londonView1, cpcHands, harleyStreet, sevenLionYard]
 
 const seoByPath = {
   '/': {
