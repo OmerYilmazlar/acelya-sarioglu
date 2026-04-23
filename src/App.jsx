@@ -25,7 +25,7 @@ import sectionNewImage from './assets/images/sections/new-image.jpg'
 import sectionOzenleUyarlanmisTerapi from './assets/images/sections/ozenle-uyarlanmis-terapi.jpg'
 import onlineTherapyImage from './assets/images/sections/online_therapy.png'
 import sectionTraumaTherapyNewleaf from './assets/images/sections/trauma-therapy-newleaf.jpg'
-import sectionPsychologistOfficePeggy from './assets/images/sections/psychologist-office-peggy.jpg'
+import sectionAttentioner from './assets/images/sections/attentioner.png'
 import eventParticipation1 from './assets/images/events/event-participation-1.jpg'
 import eventParticipation2 from './assets/images/events/event-participation-2.jpg'
 import eventParticipation3 from './assets/images/events/event-participation-3.jpg'
@@ -66,7 +66,7 @@ const menuGroups = {
 }
 
 const stockImages = {
-  menuClinic: sectionPsychologistOfficePeggy,
+  menuClinic: sectionAttentioner,
   menuFamily: sectionChildTherapyRoomTimur,
   yetiskinSplitA: sectionNewImage,
   yetiskinSplitB: sectionOzenleUyarlanmisTerapi,
@@ -75,7 +75,7 @@ const stockImages = {
   terapiSplitA: sectionNewImage,
   terapiSplitB: onlineTherapyImage,
   otizmSplitA: sectionTraumaTherapyNewleaf,
-  otizmSplitB: sectionPsychologistOfficePeggy,
+  otizmSplitB: sectionAttentioner,
   homeSplitA: sectionOzenleUyarlanmisTerapi,
   homeSplitB: sectionTherapyNotesCottonbro,
   therapyShowcase: sectionPsychologySessionMart,
