@@ -18,7 +18,7 @@ import heroOtizmDehb from './assets/images/pages/hero-otizm-dehb.jpeg'
 import heroIletisim from './assets/images/pages/hero-iletisim.jpeg'
 import acelyaPortrait from './assets/images/profile/acelya-sarioglu.jpeg'
 import sectionTherapyNotesCottonbro from './assets/images/sections/therapy-notes-cottonbro.jpg'
-import sectionPsychologySessionMart from './assets/images/sections/psychology-session-mart.jpg'
+import sectionTerapiYaklasimlariVeTedavi from './assets/images/sections/Terapi Yaklaşımları ve Tedavi.png'
 import sectionChildTherapyRoomTimur from './assets/images/sections/child-therapy-room-timur.jpg'
 import sectionConsultationSilverkblackB from './assets/images/sections/consultation-silverkblack-b.jpg'
 import sectionNewImage from './assets/images/sections/new-image.jpg'
@@ -78,7 +78,7 @@ const stockImages = {
   otizmSplitB: sectionAttentioner,
   homeSplitA: sectionOzenleUyarlanmisTerapi,
   homeSplitB: sectionTherapyNotesCottonbro,
-  therapyShowcase: sectionPsychologySessionMart,
+  therapyShowcase: sectionTerapiYaklasimlariVeTedavi,
 }
 
 const homeCarouselImages = [londonView1, cpcHands, harleyStreet, sevenLionYard]
