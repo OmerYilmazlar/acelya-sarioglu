@@ -17,7 +17,6 @@ import heroTerapi from './assets/images/pages/hero-terapi.jpg'
 import heroOtizmDehb from './assets/images/pages/hero-otizm-dehb.jpeg'
 import heroIletisim from './assets/images/pages/hero-iletisim.jpeg'
 import acelyaPortrait from './assets/images/profile/acelya-sarioglu.jpeg'
-import sectionTherapySessionPolina from './assets/images/sections/therapy-session-polina.jpg'
 import sectionTherapyNotesCottonbro from './assets/images/sections/therapy-notes-cottonbro.jpg'
 import sectionPsychologySessionMart from './assets/images/sections/psychology-session-mart.jpg'
 import sectionChildTherapyRoomTimur from './assets/images/sections/child-therapy-room-timur.jpg'
@@ -68,7 +67,7 @@ const menuGroups = {
 const stockImages = {
   menuClinic: sectionPsychologistOfficePeggy,
   menuFamily: sectionChildTherapyRoomTimur,
-  yetiskinSplitA: sectionTherapySessionPolina,
+  yetiskinSplitA: sectionPsychologistOfficePeggy,
   yetiskinSplitB: sectionConsultationSilverkblackA,
   cocukSplitA: sectionChildTherapyRoomTimur,
   cocukSplitB: sectionConsultationSilverkblackB,
@@ -947,8 +946,8 @@ function TherapyMethodsSection() {
     'Bilişsel Davranışçı Terapi (BDT)',
     'Şema Terapi',
     'Oyun Terapisi',
-    'Mindfulness Temelli Yaklaşım',
-    'Kısa Süreli Çözüm Odaklı Terapi',
+    'MINDFULNESS Temelli Yaklaşım',
+    'Çözüm Odaklı Kısa Süreli Terapi',
     'Kaygı ve Stres Çalışmaları',
     'Panik Atak ve Obsesif Belirtiler',
   ]
@@ -1395,7 +1394,7 @@ function HomePage() {
       />
       <HomeChelseaSplit
         title="En İyi Tedavi Sonuçları"
-        text="Terapi seanslarımda bilimsel etkinliği kanıtlanmış yöntemleri kullanıyorum. Yapılandırılmış ve kişiye özel planlanan bu süreç, danışanların işlevselliğini artırmayı ve yaşam kalitesini güçlendirmeyi hedefler."
+        text="Terapi seanslarımda bilimsel etkinliği kanıtlanmış yöntemleri kullanıyorum. Yapılandırılmış ve her danışanın ihtiyaçlarına göre kişiselleştirilen bu süreç, danışanların işlevselliğini artırmayı ve yaşam kalitesini güçlendirmeyi hedefler. Bu çerçevede en sık kullandığım yaklaşımlardan biri Bilişsel ve Davranışçı Terapi (BDT)'dir. BDT, günümüzde en çok araştırılmış ve etkinliği güçlü bilimsel kanıtlarla desteklenen psikoterapi yaklaşımlarından biridir. Birçok ruhsal zorluk ve psikiyatrik durumda, ulusal ve uluslararası klinik kılavuzlarda ilk seçenek tedavi yaklaşımları arasında yer almaktadır. Bunun yanı sıra, bir diğer etkili yaklaşım olan Şema Terapi ile süreci destekleyerek, daha derin ve tekrarlayan yaşam örüntülerini de bütüncül bir şekilde ele alıyorum. Şema Terapi, özellikle erken dönem yaşantılara bağlı gelişen kalıcı düşünce ve ilişki kalıplarına odaklanan, etkinliği klinik çalışmalarla desteklenmiş bir yaklaşımdır."
         image={stockImages.homeSplitB}
         reverse
       />
