@@ -20,7 +20,7 @@ import acelyaPortrait from './assets/images/profile/acelya-sarioglu.jpeg'
 import sectionTherapyNotesCottonbro from './assets/images/sections/therapy-notes-cottonbro.jpg'
 import sectionTerapiYaklasimlariVeTedavi from './assets/images/sections/Terapi Yaklaşımları ve Tedavi.png'
 import sectionChildTherapyRoomTimur from './assets/images/sections/child-therapy-room-timur.jpg'
-import sectionConsultationSilverkblackB from './assets/images/sections/consultation-silverkblack-b.jpg'
+import sectionChildWithAbacus from './assets/images/sections/child_with_abacus.png'
 import sectionNewImage from './assets/images/sections/new-image.jpg'
 import sectionOzenleUyarlanmisTerapi from './assets/images/sections/ozenle-uyarlanmis-terapi.jpg'
 import onlineTherapyImage from './assets/images/sections/online_therapy.png'
@@ -71,7 +71,7 @@ const stockImages = {
   yetiskinSplitA: sectionNewImage,
   yetiskinSplitB: sectionOzenleUyarlanmisTerapi,
   cocukSplitA: sectionChildTherapyRoomTimur,
-  cocukSplitB: sectionConsultationSilverkblackB,
+  cocukSplitB: sectionChildWithAbacus,
   terapiSplitA: sectionNewImage,
   terapiSplitB: onlineTherapyImage,
   otizmSplitA: sectionTraumaTherapyNewleaf,
