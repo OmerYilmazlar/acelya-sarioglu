@@ -1151,6 +1151,8 @@ function MockForm({ title = 'Danışmanlık Başvuru Formu' }) {
 }
 
 function PageTemplate({ title, subtitle, image, introTitle, introText, cardsTitle, cards, cardsSection, splitA, splitB, currentPath }) {
+  const introParagraphs = introText.split(/\n\s*\n/)
+
   return (
     <main>
       <Hero title={title} subtitle={subtitle} image={image} />
@@ -1158,7 +1160,11 @@ function PageTemplate({ title, subtitle, image, introTitle, introText, cardsTitl
         <div className="section-head">
           <h2>{introTitle}</h2>
         </div>
-        <p className="intro-text-large">{introText}</p>
+        {introParagraphs.map((paragraph) => (
+          <p key={paragraph} className="intro-text-large">
+            {paragraph}
+          </p>
+        ))}
       </section>
       {cardsSection || <CardGrid title={cardsTitle} items={cards} />}
       <SplitSection title={splitA.title} text={splitA.text} image={splitA.image} />
@@ -1248,14 +1254,14 @@ function TerapiPage() {
       title="Terapi ve Tedavi"
       subtitle="Bilimsel temelli, kişiye özel terapi yaklaşımları"
       image={heroTerapi}
-      introTitle="Terapi ve Tedavi"
-      introText="Terapi, birçok farklı şekilde uygulanabilir. Bazı terapi yaklaşımları belirli sorunlara daha uygunken, bazı kişiler de belirli yöntemlerle daha iyi uyum sağlar. Bu yüzden, her danışanım için en etkili yaklaşımı belirleyerek süreci onların ihtiyaçlarına göre şekillendiriyorum. Farklı terapi ekollerinden eğitimlerim ile terapi sürecini tamamen danışanlarımın ihtiyaçlarına özel olarak uyarlayabiliyor ve en uygun yaklaşımı belirleyerek en iyi şekilde destek sağlayabiliyorum."
-      cardsTitle="Terapi Yaklaşımları"
+      introTitle="Terapi ve Tedavi Yaklaşımım"
+      introText="Terapi süreci, her bireyin kendi hızında ve ihtiyacına göre şekillenen bir keşif yolculuğudur. Psikoterapi süreci her birey için farklı işleyen dinamik bir yapı olduğu için, tek bir yönteme bağlı kalmak yerine; sizin yaşantınıza, beklentilerinize ve hedeflerinize en uygun yolu belirlemek temel önceliğimdir.\n\nBazı terapi yöntemleri spesifik zorluklar üzerinde daha hızlı sonuç verirken, bazıları bireyin kişisel mizacına ve yaşam tarzına daha iyi uyum sağlar. Bu nedenle seanslarımda, \"tek bir kalıba\" sığmak yerine danışan odaklı, esnek ve bütüncül (eklektik) bir yol izliyorum. Aldığım farklı terapi eğitimlerini ve bilimsel kanıta dayalı yaklaşımları sentezleyerek, süreci tamamen sizin ihtiyaçlarınıza özel olarak yapılandırıyor; her aşamada size en etkili ve kalıcı desteği sunmayı hedefliyorum."
+      cardsTitle="Kullandığım Terapi Yaklaşımları"
       cards={[
-        { title: 'Bilişsel ve Davranışçı Terapiler', text: 'Bilimsel temelli ve yapılandırılmış tekniklerle düşünce, duygu ve davranış örüntülerini ele alır.' },
-        { title: 'Şema Terapi', text: 'Kökleşmiş yaşam örüntülerini ve ilişkisel döngüleri fark ederek daha işlevsel bir iç denge kurmayı destekler.' },
-        { title: 'Oyun Terapisi', text: 'Özellikle çocuklarla çalışırken duyguların ifade edilmesini ve güvenli biçimde işlenmesini kolaylaştırır.' },
-        { title: 'Mindfulness', text: 'Anda kalma, farkındalık kazanma ve duygu düzenleme becerilerini güçlendiren bir yaklaşım sunar.' },
+        { title: 'Bilişsel Davranışçı Terapi (BDT)', text: 'Güncel sorunlara odaklanarak, bizi zorlayan olumsuz düşünce ve davranış kalıplarını daha sağlıklı olanlarla dönüştürmeyi hedefler.' },
+        { title: 'Şema Terapi', text: 'Kökeni çocukluk dönemine dayanan ve yetişkinlikte tekrar eden derin inançları (şemaları) fark edip, bu kökleşmiş kalıpları iyileştirmeye odaklanır.' },
+        { title: 'Mindfulness Temelli Yaklaşımlar', text: 'Şimdiki ana odaklanmayı öğreterek stres, kaygı ve duygusal zorluklarla daha sağlıklı ve farkındalıklı bir bağ kurmayı destekler.' },
+        { title: 'Çözüm Odaklı Kısa Süreli Terapi', text: 'Sorunun kendisinden ziyade çözüme ve danışanın mevcut güçlü kaynaklarını kullanarak hızlı bir değişim yaratmaya odaklanır.' },
       ]}
       splitA={{
         title: 'Kısa Süreli Çözüm Odaklı Terapi',
