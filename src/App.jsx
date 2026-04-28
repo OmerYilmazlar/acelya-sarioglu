@@ -981,7 +981,7 @@ function TherapyMethodsSection() {
       <div className="therapy-showcase-image" style={{ backgroundImage: `url(${stockImages.therapyShowcase})` }} />
       <div className="therapy-showcase-content">
         <div className="therapy-showcase-frame">
-          <h2>Terapi Yaklaşımları ve Tedavi</h2>
+          <h2>Çalışma Alanları</h2>
           <p>
             Terapi, birçok farklı şekilde uygulanabilir. Bazı terapi yaklaşımları belirli sorunlara daha uygunken, bazı kişiler de belirli
             yöntemlerle daha iyi uyum sağlar. Bu yüzden, her danışanım için en etkili yaklaşımı belirleyerek süreci onların ihtiyaçlarına göre
@@ -1414,7 +1414,7 @@ function HomePage() {
         image={stockImages.homeSplitA}
       />
       <HomeChelseaSplit
-        title="Çalışma Alanları"
+        title="En İyi Tedavi Sonuçları"
         text="Terapi seanslarımda bilimsel etkinliği kanıtlanmış yöntemleri kullanıyorum. Yapılandırılmış ve her danışanın ihtiyaçlarına göre kişiselleştirilen bu süreç, danışanların işlevselliğini artırmayı ve yaşam kalitesini güçlendirmeyi hedefler. Bu çerçevede en sık kullandığım yaklaşımlardan biri Bilişsel ve Davranışçı Terapi (BDT)'dir. BDT, günümüzde en çok araştırılmış ve etkinliği güçlü bilimsel kanıtlarla desteklenen psikoterapi yaklaşımlarından biridir. Birçok ruhsal zorluk ve psikiyatrik durumda, ulusal ve uluslararası klinik kılavuzlarda ilk seçenek tedavi yaklaşımları arasında yer almaktadır. Bunun yanı sıra, bir diğer etkili yaklaşım olan Şema Terapi ile süreci destekleyerek, daha derin ve tekrarlayan yaşam örüntülerini de bütüncül bir şekilde ele alıyorum. Şema Terapi, özellikle erken dönem yaşantılara bağlı gelişen kalıcı düşünce ve ilişki kalıplarına odaklanan, etkinliği klinik çalışmalarla desteklenmiş bir yaklaşımdır."
         image={stockImages.homeSplitB}
         reverse
