@@ -976,7 +976,7 @@ a {
 }
 
 .chelsea-split-wrap.reverse.stretch-right {
-  grid-template-columns: 1.45fr 0.55fr;
+  grid-template-columns: 1.05fr 0.95fr;
 }
 
 .chelsea-split-wrap.reverse .chelsea-split-image {
@@ -994,16 +994,24 @@ a {
 }
 
 .chelsea-split-wrap.reverse.stretch-right .chelsea-split-image {
-  min-height: 430px;
-  background-position: center top 18%;
-}
-
-.chelsea-split-wrap.reverse.stretch-right .chelsea-split-panel {
-  padding-right: clamp(34px, 5vw, 82px);
+  min-height: 470px;
+  background-position: calc(50% - 220px) center;
+  position: relative;
+  overflow: hidden;
 }
 
 .chelsea-split-wrap.reverse.stretch-right .chelsea-split-frame {
-  max-width: 760px;
+  max-width: 660px;
+}
+
+.chelsea-split-wrap.reverse.stretch-right .chelsea-split-frame h2 {
+  font-size: clamp(2.05rem, 4.0vw, 3.45rem);
+}
+
+.chelsea-split-wrap.reverse.stretch-right .chelsea-split-frame p {
+  max-width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 .chelsea-split-panel {
