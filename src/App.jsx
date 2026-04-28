@@ -957,23 +957,20 @@ function ServicePreviewSection() {
 
 function TherapyMethodsSection() {
   const leftColumn = [
-    'Bilişsel Davranışçı Terapi (BDT)',
-    'Şema Terapi',
-    'Oyun Terapisi',
-    'MINDFULNESS Temelli Yaklaşım',
-    'Çözüm Odaklı Kısa Süreli Terapi',
-    'Kaygı ve Stres Çalışmaları',
-    'Panik Atak ve Obsesif Belirtiler',
+    'Kaygı (Anksiyete) Bozuklukları ve Panik Atak',
+    'Obsesif Kompulsif Bozukluk (OKB)',
+    'Depresyon ve Duygu Durum Süreçleri',
+    'Travma ve Travma Sonrası Stres Bozukluğu (TSSB)',
+    'Sosyal Fobi ve Özgül Fobiler',
+    'Öfke Kontrolü ve Duygu Düzenleme Güçlükleri',
+    'Kişilik Örüntüleri ve Kişilik Bozuklukları',
+    'Yeme ve Beslenme Bozuklukları',
   ]
 
   const rightColumn = [
-    'Duygu Düzenleme ve Baş Etme Becerileri',
-    'İlişki ve İletişim Zorlukları',
-    'Travma Sonrası Destek',
-    'Çocuk ve Ergen Psikoterapi',
-    'Ebeveyn Danışmanlığı',
-    'Otizm ve DEHB Değerlendirme Sonrası Psiko-eğitim',
-    'Online Terapi',
+    'Çocuk ve Ergen Psikoterapisi',
+    'Ebeveyn Danışmanlığı ve Rehberliği',
+    'Otizm ve DEHB Değerlendirmesi Sonrası Psikoeğitim',
   ]
 
   return (
@@ -982,23 +979,29 @@ function TherapyMethodsSection() {
       <div className="therapy-showcase-content">
         <div className="therapy-showcase-frame">
           <h2>Çalışma Alanları</h2>
-          <p>
-            Terapi, birçok farklı şekilde uygulanabilir. Bazı terapi yaklaşımları belirli sorunlara daha uygunken, bazı kişiler de belirli
-            yöntemlerle daha iyi uyum sağlar. Bu yüzden, her danışanım için en etkili yaklaşımı belirleyerek süreci onların ihtiyaçlarına göre
-            şekillendiriyorum.
+          <p className="therapy-intro">
+            Destek sunduğum başlıca konuları aşağıda kategorize edilmiş olarak bulabilirsiniz:
           </p>
           <div className="therapy-columns">
-            <ul>
+            <ul className="therapy-list">
+              <li className="therapy-category">Yetişkin Psikoterapisi</li>
               {leftColumn.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="therapy-item">{item}</li>
               ))}
             </ul>
-            <ul>
+            <ul className="therapy-list">
+              <li className="therapy-category">Çocuk, Ergen ve Aile Danışmanlığı</li>
               {rightColumn.map((item) => (
-                <li key={item}>{item}</li>
+                <li key={item} className="therapy-item">{item}</li>
               ))}
             </ul>
           </div>
+          <p className="therapy-note">
+            Not: Londra dışında olan veya çeşitli sebeplerle kliniğe gelemeyen danışanlarım için Online Terapi hizmeti de sunmaktayım.
+          </p>
+          <p className="therapy-contact">
+            Sürece dair sorularınız veya randevu talepleriniz için benimle iletişime geçebilirsiniz.
+          </p>
           <Link className="btn-primary dark-cta therapy-showcase-cta" to="/iletisim">
             İletişim
           </Link>
