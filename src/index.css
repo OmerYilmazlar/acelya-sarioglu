@@ -976,7 +976,7 @@ a {
 }
 
 .chelsea-split-wrap.reverse.stretch-right {
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.45fr 0.55fr;
 }
 
 .chelsea-split-wrap.reverse .chelsea-split-image {
@@ -991,6 +991,19 @@ a {
   min-height: 470px;
   background-size: cover;
   background-position: center;
+}
+
+.chelsea-split-wrap.reverse.stretch-right .chelsea-split-image {
+  min-height: 430px;
+  background-position: center top 18%;
+}
+
+.chelsea-split-wrap.reverse.stretch-right .chelsea-split-panel {
+  padding-right: clamp(34px, 5vw, 82px);
+}
+
+.chelsea-split-wrap.reverse.stretch-right .chelsea-split-frame {
+  max-width: 760px;
 }
 
 .chelsea-split-panel {
