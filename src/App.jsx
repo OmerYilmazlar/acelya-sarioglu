@@ -1008,9 +1008,9 @@ function TherapyMethodsSection() {
   )
 }
 
-function HomeChelseaSplit({ title, text, image, reverse = false }) {
+function HomeChelseaSplit({ title, text, image, reverse = false, stretchRight = false }) {
   return (
-    <section className={`chelsea-split-wrap ${reverse ? 'reverse' : ''}`}>
+    <section className={`chelsea-split-wrap ${reverse ? 'reverse' : ''} ${stretchRight ? 'stretch-right' : ''}`}>
       <div className="chelsea-split-image" style={{ backgroundImage: `url(${image})` }} />
       <div className="chelsea-split-panel">
         <article className="chelsea-split-frame">
@@ -1255,7 +1255,9 @@ function TerapiPage() {
       subtitle="Bilimsel temelli, kişiye özel terapi yaklaşımları"
       image={heroTerapi}
       introTitle="Terapi ve Tedavi Yaklaşımım"
-      introText="Terapi süreci, her bireyin kendi hızında ve ihtiyacına göre şekillenen bir keşif yolculuğudur. Psikoterapi süreci her birey için farklı işleyen dinamik bir yapı olduğu için, tek bir yönteme bağlı kalmak yerine; sizin yaşantınıza, beklentilerinize ve hedeflerinize en uygun yolu belirlemek temel önceliğimdir.\n\nBazı terapi yöntemleri spesifik zorluklar üzerinde daha hızlı sonuç verirken, bazıları bireyin kişisel mizacına ve yaşam tarzına daha iyi uyum sağlar. Bu nedenle seanslarımda, \"tek bir kalıba\" sığmak yerine danışan odaklı, esnek ve bütüncül (eklektik) bir yol izliyorum. Aldığım farklı terapi eğitimlerini ve bilimsel kanıta dayalı yaklaşımları sentezleyerek, süreci tamamen sizin ihtiyaçlarınıza özel olarak yapılandırıyor; her aşamada size en etkili ve kalıcı desteği sunmayı hedefliyorum."
+      introText={`Terapi süreci, her bireyin kendi hızında ve ihtiyacına göre şekillenen bir keşif yolculuğudur. Psikoterapi süreci her birey için farklı işleyen dinamik bir yapı olduğu için, tek bir yönteme bağlı kalmak yerine; sizin yaşantınıza, beklentilerinize ve hedeflerinize en uygun yolu belirlemek temel önceliğimdir.
+
+    Bazı terapi yöntemleri spesifik zorluklar üzerinde daha hızlı sonuç verirken, bazıları bireyin kişisel mizacına ve yaşam tarzına daha iyi uyum sağlar. Bu nedenle seanslarımda, "tek bir kalıba" sığmak yerine danışan odaklı, esnek ve bütüncül (eklektik) bir yol izliyorum. Aldığım farklı terapi eğitimlerini ve bilimsel kanıta dayalı yaklaşımları sentezleyerek, süreci tamamen sizin ihtiyaçlarınıza özel olarak yapılandırıyor; her aşamada size en etkili ve kalıcı desteği sunmayı hedefliyorum.`}
       cardsTitle="Kullandığım Terapi Yaklaşımları"
       cards={[
         { title: 'Bilişsel Davranışçı Terapi (BDT)', text: 'Güncel sorunlara odaklanarak, bizi zorlayan olumsuz düşünce ve davranış kalıplarını daha sağlıklı olanlarla dönüştürmeyi hedefler.' },
@@ -1416,6 +1418,7 @@ function HomePage() {
         text="Terapi seanslarımda bilimsel etkinliği kanıtlanmış yöntemleri kullanıyorum. Yapılandırılmış ve her danışanın ihtiyaçlarına göre kişiselleştirilen bu süreç, danışanların işlevselliğini artırmayı ve yaşam kalitesini güçlendirmeyi hedefler. Bu çerçevede en sık kullandığım yaklaşımlardan biri Bilişsel ve Davranışçı Terapi (BDT)'dir. BDT, günümüzde en çok araştırılmış ve etkinliği güçlü bilimsel kanıtlarla desteklenen psikoterapi yaklaşımlarından biridir. Birçok ruhsal zorluk ve psikiyatrik durumda, ulusal ve uluslararası klinik kılavuzlarda ilk seçenek tedavi yaklaşımları arasında yer almaktadır. Bunun yanı sıra, bir diğer etkili yaklaşım olan Şema Terapi ile süreci destekleyerek, daha derin ve tekrarlayan yaşam örüntülerini de bütüncül bir şekilde ele alıyorum. Şema Terapi, özellikle erken dönem yaşantılara bağlı gelişen kalıcı düşünce ve ilişki kalıplarına odaklanan, etkinliği klinik çalışmalarla desteklenmiş bir yaklaşımdır."
         image={stockImages.homeSplitB}
         reverse
+        stretchRight
       />
       <ServicePreviewSection />
       <TherapyMethodsSection />
