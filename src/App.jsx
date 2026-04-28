@@ -1252,6 +1252,13 @@ function CocukPage() {
 }
 
 function TerapiPage() {
+  const methods = [
+    { title: 'Bilişsel Davranışçı Terapi (BDT)', text: 'Güncel sorunlara odaklanarak, bizi zorlayan olumsuz düşünce ve davranış kalıplarını daha sağlıklı olanlarla dönüştürmeyi hedefler.' },
+    { title: 'Şema Terapi', text: 'Kökeni çocukluk dönemine dayanan ve yetişkinlikte tekrar eden derin inançları (şemaları) fark edip, bu kökleşmiş kalıpları iyileştirmeye odaklanır.' },
+    { title: 'Mindfulness Temelli Yaklaşımlar', text: 'Şimdiki ana odaklanmayı öğreterek stres, kaygı ve duygusal zorluklarla daha sağlıklı ve farkındalıklı bir bağ kurmayı destekler.' },
+    { title: 'Çözüm Odaklı Kısa Süreli Terapi', text: 'Sorunun kendisinden ziyade çözüme ve danışanın mevcut güçlü kaynaklarını kullanarak hızlı bir değişim yaratmaya odaklanır.' },
+  ]
+
   return (
     <PageTemplate
       title="Terapi ve Tedavi"
@@ -1260,14 +1267,25 @@ function TerapiPage() {
       introTitle="Terapi ve Tedavi Yaklaşımım"
       introText={`Terapi süreci, her bireyin kendi hızında ve ihtiyacına göre şekillenen bir keşif yolculuğudur. Psikoterapi süreci her birey için farklı işleyen dinamik bir yapı olduğu için, tek bir yönteme bağlı kalmak yerine; sizin yaşantınıza, beklentilerinize ve hedeflerinize en uygun yolu belirlemek temel önceliğimdir.
 
-    Bazı terapi yöntemleri spesifik zorluklar üzerinde daha hızlı sonuç verirken, bazıları bireyin kişisel mizacına ve yaşam tarzına daha iyi uyum sağlar. Bu nedenle seanslarımda, "tek bir kalıba" sığmak yerine danışan odaklı, esnek ve bütüncül (eklektik) bir yol izliyorum. Aldığım farklı terapi eğitimlerini ve bilimsel kanıta dayalı yaklaşımları sentezleyerek, süreci tamamen sizin ihtiyaçlarınıza özel olarak yapılandırıyor; her aşamada size en etkili ve kalıcı desteği sunmayı hedefliyorum.`}
-      cardsTitle="Kullandığım Terapi Yaklaşımları"
-      cards={[
-        { title: 'Bilişsel Davranışçı Terapi (BDT)', text: 'Güncel sorunlara odaklanarak, bizi zorlayan olumsuz düşünce ve davranış kalıplarını daha sağlıklı olanlarla dönüştürmeyi hedefler.' },
-        { title: 'Şema Terapi', text: 'Kökeni çocukluk dönemine dayanan ve yetişkinlikte tekrar eden derin inançları (şemaları) fark edip, bu kökleşmiş kalıpları iyileştirmeye odaklanır.' },
-        { title: 'Mindfulness Temelli Yaklaşımlar', text: 'Şimdiki ana odaklanmayı öğreterek stres, kaygı ve duygusal zorluklarla daha sağlıklı ve farkındalıklı bir bağ kurmayı destekler.' },
-        { title: 'Çözüm Odaklı Kısa Süreli Terapi', text: 'Sorunun kendisinden ziyade çözüme ve danışanın mevcut güçlü kaynaklarını kullanarak hızlı bir değişim yaratmaya odaklanır.' },
-      ]}
+Bazı terapi yöntemleri spesifik zorluklar üzerinde daha hızlı sonuç verirken, bazıları bireyin kişisel mizacına ve yaşam tarzına daha iyi uyum sağlar. Bu nedenle seanslarımda, "tek bir kalıba" sığmak yerine danışan odaklı, esnek ve bütüncül (eklektik) bir yol izliyorum. Aldığım farklı terapi eğitimlerini ve bilimsel kanıta dayalı yaklaşımları sentezleyerek, süreci tamamen sizin ihtiyaçlarınıza özel olarak yapılandırıyor; her aşamada size en etkili ve kalıcı desteği sunmayı hedefliyorum.`}
+      cardsSection={(
+        <section className="section therapy-methods-section">
+          <div className="section-head centered">
+            <h2>Kullandığım Terapi Yaklaşımları</h2>
+            <p className="therapy-methods-intro">
+              Ziyaretçilerimin ihtiyaçlarına ve çalışılan konunun dinamiklerine göre aşağıdaki bilimsel yöntemlerden faydalanıyorum:
+            </p>
+          </div>
+          <div className="card-grid">
+            {methods.map((method) => (
+              <article key={method.title} className="card">
+                <h3>{method.title}</h3>
+                <p className="card-summary">{method.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
       splitA={{
         title: 'Kısa Süreli Çözüm Odaklı Terapi',
         text: 'Danışanın güçlü yönlerini ve hedeflerini merkeze alarak, daha kısa sürede işlevsel adımlar atılmasına yardımcı olur.',

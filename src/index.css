@@ -504,6 +504,21 @@ a {
   color: var(--teal);
 }
 
+.therapy-methods-section .section-head {
+  display: grid;
+  justify-items: center;
+}
+
+.therapy-methods-intro {
+  margin: 12px 0 0;
+  max-width: 980px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4f6469;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
 .intro-text-large {
   font-size: clamp(1.1rem, 1.5vw, 1.3rem);
   line-height: 1.85;
