@@ -1414,7 +1414,7 @@ function HomePage() {
         image={stockImages.homeSplitA}
       />
       <HomeChelseaSplit
-        title="En İyi Tedavi Sonuçları"
+        title="Çalışma Alanları"
         text="Terapi seanslarımda bilimsel etkinliği kanıtlanmış yöntemleri kullanıyorum. Yapılandırılmış ve her danışanın ihtiyaçlarına göre kişiselleştirilen bu süreç, danışanların işlevselliğini artırmayı ve yaşam kalitesini güçlendirmeyi hedefler. Bu çerçevede en sık kullandığım yaklaşımlardan biri Bilişsel ve Davranışçı Terapi (BDT)'dir. BDT, günümüzde en çok araştırılmış ve etkinliği güçlü bilimsel kanıtlarla desteklenen psikoterapi yaklaşımlarından biridir. Birçok ruhsal zorluk ve psikiyatrik durumda, ulusal ve uluslararası klinik kılavuzlarda ilk seçenek tedavi yaklaşımları arasında yer almaktadır. Bunun yanı sıra, bir diğer etkili yaklaşım olan Şema Terapi ile süreci destekleyerek, daha derin ve tekrarlayan yaşam örüntülerini de bütüncül bir şekilde ele alıyorum. Şema Terapi, özellikle erken dönem yaşantılara bağlı gelişen kalıcı düşünce ve ilişki kalıplarına odaklanan, etkinliği klinik çalışmalarla desteklenmiş bir yaklaşımdır."
         image={stockImages.homeSplitB}
         reverse
